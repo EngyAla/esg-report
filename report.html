@@ -1,0 +1,3663 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nova Connect Egypt ESG Report 2026</title>
+    <style>
+        
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+    
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Outfit', sans-serif;
+        color: #1F1F1F;
+        background-color: #F0F0F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    /* Layout containers */
+    .page {
+        width: 210mm;
+        height: 297mm;
+        background: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        page-break-after: always;
+    }
+    
+    .normal-page {
+        padding: 28mm 20mm 20mm 20mm;
+    }
+    
+    .cover-page {
+        padding: 0;
+        background: #FFFFFF;
+    }
+    
+    .divider-page {
+        padding: 0;
+    }
+    
+    .back-cover-page {
+        padding: 0;
+        background: #1F1F1F;
+    }
+    
+    /* Running headers and footers */
+    .page-header {
+        position: absolute;
+        top: 14mm;
+        left: 20mm;
+        right: 20mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1.5px solid #FF7900;
+        padding-bottom: 2mm;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #1F1F1F;
+    }
+    
+    .page-header span:last-child {
+        color: #FF7900;
+    }
+    
+    .page-footer {
+        position: absolute;
+        bottom: 14mm;
+        left: 20mm;
+        right: 20mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #E5E5E5;
+        padding-top: 2.5mm;
+        font-size: 9px;
+        color: #888888;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #FF7900;
+        margin-top: 0;
+        margin-bottom: 4mm;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+    
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1F1F1F;
+        margin-top: 0;
+        margin-bottom: 3mm;
+        border-left: 4px solid #FF7900;
+        padding-left: 3mm;
+    }
+    
+    h3 {
+        font-size: 13px;
+        font-weight: 600;
+        color: #FF7900;
+        margin-top: 4mm;
+        margin-bottom: 2mm;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    p {
+        font-size: 11.5px;
+        line-height: 1.55;
+        color: #444444;
+        margin-top: 0;
+        margin-bottom: 3.5mm;
+        text-align: justify;
+    }
+    
+    .lead-paragraph {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #1F1F1F;
+        font-weight: 400;
+        margin-bottom: 5mm;
+        border-left: 3px solid #1F1F1F;
+        padding-left: 4mm;
+    }
+    
+    /* Column grids */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+        height: calc(100% - 15mm);
+    }
+    
+    .grid-2-asym {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 8mm;
+    }
+    
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5mm;
+    }
+    
+    /* Dashboard and Cards */
+    .kpi-grid-4x3 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 4mm;
+        margin-top: 4mm;
+    }
+    
+    .kpi-grid-4x2 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5mm;
+        margin-top: 6mm;
+    }
+    
+    .kpi-card {
+        background: #F9F9F9;
+        border-top: 4px solid #FF7900;
+        padding: 4.5mm 3.5mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 25mm;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .kpi-title {
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #555555;
+        line-height: 1.2;
+    }
+    
+    .kpi-value {
+        font-size: 20px;
+        font-weight: 800;
+        color: #1F1F1F;
+        margin: 2mm 0 1mm 0;
+        line-height: 1;
+    }
+    
+    .kpi-trend {
+        font-size: 9px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 1mm;
+    }
+    
+    .trend-up {
+        color: #2E7D32;
+    }
+    
+    .trend-down {
+        color: #2E7D32; /* Environmental improvements (like carbon decrease) are positive */
+    }
+    
+    .trend-alert {
+        color: #D32F2F;
+    }
+    
+    /* Tables */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 4mm;
+        font-size: 10px;
+    }
+    
+    .data-table th {
+        background-color: #1F1F1F;
+        color: #FFFFFF;
+        text-align: left;
+        padding: 2.5mm 3mm;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #FF7900;
+    }
+    
+    .data-table td {
+        padding: 2.2mm 3mm;
+        border-bottom: 1px solid #E5E5E5;
+        color: #333333;
+    }
+    
+    .data-table tr:nth-child(even) td {
+        background-color: #F9F9F9;
+    }
+    
+    .data-table tr:hover td {
+        background-color: #F2F2F2;
+    }
+    
+    .table-container {
+        margin-top: 4mm;
+    }
+    
+    /* Case Studies */
+    .case-study-box {
+        background: #FDFDFD;
+        border: 1px solid #E5E5E5;
+        border-top: 6px solid #FF7900;
+        padding: 6mm;
+        margin-top: 5mm;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+    
+    .case-study-header {
+        font-size: 10px;
+        font-weight: 800;
+        color: #FF7900;
+        text-transform: uppercase;
+        margin-bottom: 1.5mm;
+        letter-spacing: 1px;
+    }
+    
+    .case-study-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1F1F1F;
+        margin-bottom: 4mm;
+    }
+    
+    .case-study-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 6mm;
+    }
+    
+    .case-study-kpis {
+        display: flex;
+        flex-direction: column;
+        gap: 3mm;
+        background: #F9F9F9;
+        padding: 4mm;
+        border-left: 3px solid #1F1F1F;
+    }
+    
+    .case-kpi-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #FF7900;
+        line-height: 1;
+    }
+    
+    .case-kpi-lbl {
+        font-size: 9.5px;
+        font-weight: 600;
+        color: #555555;
+        text-transform: uppercase;
+    }
+    
+    /* Graphics and Placement */
+    .chart-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4mm;
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        padding: 4mm;
+    }
+    
+    .chart-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
+    .image-placeholder {
+        background: #E5E5E5;
+        border: 2px dashed #999999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #555555;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        padding: 10mm;
+    }
+    
+    .ceo-portrait-box {
+        width: 100%;
+        height: 100%;
+        min-height: 120mm;
+        background-color: #1F1F1F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        position: relative;
+    }
+    
+    .ceo-portrait-icon {
+        font-size: 40px;
+        color: #FF7900;
+        margin-bottom: 4mm;
+    }
+    
+    .ceo-signature-area {
+        margin-top: 10mm;
+        border-top: 1px solid #CCCCCC;
+        padding-top: 4mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+    .signature-font {
+        font-family: 'Brush Script MT', cursive, sans-serif;
+        font-size: 26px;
+        color: #FF7900;
+    }
+    
+    /* Cover Page Elements */
+    .cover-top {
+        height: 140mm;
+        background: #1F1F1F;
+        padding: 30mm 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .cover-top::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 20mm;
+        width: 40mm;
+        height: 6mm;
+        background: #FF7900;
+    }
+    
+    .cover-brand {
+        font-size: 24px;
+        font-weight: 800;
+        color: #FFFFFF;
+        letter-spacing: 2px;
+    }
+    
+    .cover-brand span {
+        color: #FF7900;
+    }
+    
+    .cover-title {
+        font-size: 44px;
+        font-weight: 800;
+        color: #FFFFFF;
+        line-height: 1.1;
+        margin-top: 10mm;
+        letter-spacing: -0.5px;
+    }
+    
+    .cover-title span {
+        color: #FF7900;
+        display: block;
+    }
+    
+    .cover-bottom {
+        height: 157mm;
+        padding: 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        background: #FFFFFF;
+    }
+    
+    .cover-network-bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 140mm;
+        height: 130mm;
+        opacity: 0.75;
+    }
+    
+    .cover-tagline {
+        font-size: 16px;
+        font-weight: 400;
+        color: #1F1F1F;
+        line-height: 1.5;
+        max-width: 120mm;
+        border-left: 4px solid #FF7900;
+        padding-left: 5mm;
+    }
+    
+    .cover-metadata {
+        font-size: 11px;
+        font-weight: 700;
+        color: #555555;
+        display: flex;
+        gap: 10mm;
+    }
+    
+    .cover-metadata span strong {
+        color: #FF7900;
+    }
+    
+    /* Divider Page Elements */
+    .divider-inner-orange {
+        background: #FF7900;
+        height: 100%;
+        padding: 40mm 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #FFFFFF;
+    }
+    
+    .divider-inner-charcoal {
+        background: #1F1F1F;
+        height: 100%;
+        padding: 40mm 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #FFFFFF;
+    }
+    
+    .divider-inner-gray {
+        background: #F4F4F4;
+        height: 100%;
+        padding: 40mm 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #1F1F1F;
+        border-left: 15mm solid #FF7900;
+    }
+    
+    .div-num {
+        font-size: 80px;
+        font-weight: 800;
+        opacity: 0.25;
+        line-height: 1;
+    }
+    
+    .div-title {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-top: 5mm;
+        text-transform: uppercase;
+    }
+    
+    .div-title span {
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: none;
+        margin-top: 4mm;
+        opacity: 0.9;
+    }
+    
+    .div-quote {
+        font-size: 18px;
+        font-style: italic;
+        line-height: 1.5;
+        max-width: 140mm;
+        border-left: 4px solid #FFFFFF;
+        padding-left: 6mm;
+    }
+    
+    .divider-inner-gray .div-quote {
+        border-left-color: #FF7900;
+        color: #555555;
+    }
+    
+    /* Table of Contents */
+    .toc-list {
+        margin-top: 8mm;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: x 10mm;
+    }
+    
+    .toc-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 4.5mm;
+        border-bottom: 1px dashed #E5E5E5;
+        padding-bottom: 1mm;
+    }
+    
+    .toc-num {
+        font-size: 11px;
+        font-weight: 800;
+        color: #FF7900;
+        margin-right: 3mm;
+    }
+    
+    .toc-name {
+        font-size: 12px;
+        font-weight: 600;
+        color: #1F1F1F;
+        flex-grow: 1;
+    }
+    
+    .toc-page {
+        font-size: 12px;
+        font-weight: 800;
+        color: #1F1F1F;
+        margin-left: 3mm;
+    }
+    
+    /* Three Pillar Strategy Diagram */
+    .pillar-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6mm;
+        margin-top: 6mm;
+        height: 200mm;
+    }
+    
+    .pillar-box {
+        border: 1.5px solid #E5E5E5;
+        border-top: 8px solid #1F1F1F;
+        background: #FDFDFD;
+        padding: 6mm 5mm;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .pillar-box.pillar-env {
+        border-top-color: #2E7D32;
+    }
+    
+    .pillar-box.pillar-soc {
+        border-top-color: #FF7900;
+    }
+    
+    .pillar-box.pillar-gov {
+        border-top-color: #1F1F1F;
+    }
+    
+    .pillar-icon-area {
+        height: 12mm;
+        display: flex;
+        align-items: center;
+        margin-bottom: 4mm;
+    }
+    
+    .pillar-icon-svg {
+        font-size: 24px;
+        font-weight: 800;
+    }
+    
+    .pillar-env .pillar-icon-svg { color: #2E7D32; }
+    .pillar-soc .pillar-icon-svg { color: #FF7900; }
+    .pillar-gov .pillar-icon-svg { color: #1F1F1F; }
+    
+    .pillar-title {
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 3mm;
+    }
+    
+    .pillar-env .pillar-title { color: #2E7D32; }
+    .pillar-soc .pillar-title { color: #FF7900; }
+    .pillar-gov .pillar-title { color: #1F1F1F; }
+    
+    .pillar-desc {
+        font-size: 11px;
+        line-height: 1.45;
+        color: #555555;
+        margin-bottom: 5mm;
+    }
+    
+    .pillar-bullet-title {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #1F1F1F;
+        margin-bottom: 2mm;
+        letter-spacing: 0.5px;
+    }
+    
+    .pillar-bullets {
+        list-style-type: square;
+        padding-left: 4.5mm;
+        margin: 0 0 5mm 0;
+    }
+    
+    .pillar-bullets li {
+        font-size: 10.5px;
+        line-height: 1.5;
+        color: #444444;
+        margin-bottom: 1.5mm;
+    }
+    
+    .pillar-kpis-list {
+        margin-top: auto;
+        background: #F6F6F6;
+        padding: 3mm;
+        border-radius: 1px;
+    }
+    
+    .pillar-kpis-title {
+        font-size: 9px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #555555;
+        margin-bottom: 1.5mm;
+    }
+    
+    .pillar-kpi-item {
+        font-size: 10px;
+        font-weight: 700;
+        margin-bottom: 1mm;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .pillar-kpi-item span:last-child {
+        color: #FF7900;
+    }
+    
+    /* SDG Mapping */
+    .sdg-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4mm;
+        margin-top: 5mm;
+    }
+    
+    .sdg-box {
+        border: 1px solid #E5E5E5;
+        padding: 4mm;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sdg-header-bar {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin-bottom: 2.5mm;
+    }
+    
+    .sdg-num-box {
+        width: 10mm;
+        height: 10mm;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 800;
+    }
+    
+    .sdg-title-text {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #1F1F1F;
+        line-height: 1.2;
+    }
+    
+    .sdg-initiative {
+        font-size: 10px;
+        line-height: 1.4;
+        color: #444444;
+        margin-bottom: 2.5mm;
+        flex-grow: 1;
+    }
+    
+    .sdg-kpi-label {
+        background: #F6F6F6;
+        padding: 1.5mm 2.5mm;
+        font-size: 9px;
+        font-weight: 700;
+        color: #FF7900;
+        border-left: 2px solid #FF7900;
+        text-transform: uppercase;
+    }
+    
+    /* SDG Colors */
+    .sdg-4 { background-color: #C7243C; }
+    .sdg-5 { background-color: #FF3A21; }
+    .sdg-8 { background-color: #A21942; }
+    .sdg-9 { background-color: #FD6925; }
+    .sdg-10 { background-color: #DD1367; }
+    .sdg-12 { background-color: #BF8B2E; }
+    .sdg-13 { background-color: #3F7E44; }
+    .sdg-16 { background-color: #0A97D9; }
+    .sdg-17 { background-color: #19486A; }
+    
+    /* Target progress status badges */
+    .status-badge {
+        padding: 0.8mm 2mm;
+        font-size: 8.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        border-radius: 1px;
+        display: inline-block;
+    }
+    
+    .status-on-track {
+        background-color: #E8F5E9;
+        color: #2E7D32;
+    }
+    
+    .status-needs-attention {
+        background-color: #FFF3E0;
+        color: #E65100;
+    }
+    
+    .status-achieved {
+        background-color: #E3F2FD;
+        color: #1565C0;
+    }
+    
+    .status-delayed {
+        background-color: #FFEBEE;
+        color: #C62828;
+    }
+    
+    /* Back Cover */
+    .back-cover-inner {
+        height: 100%;
+        padding: 40mm 20mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #FFFFFF;
+    }
+    
+    .back-cover-logo {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+    
+    .back-cover-logo span {
+        color: #FF7900;
+    }
+    
+    .back-cover-contact {
+        font-size: 11px;
+        line-height: 1.6;
+        color: #CCCCCC;
+    }
+    
+    .back-cover-contact strong {
+        color: #FF7900;
+    }
+    
+    .back-cover-legal {
+        font-size: 8.5px;
+        line-height: 1.5;
+        color: #888888;
+        border-top: 1px solid #333333;
+        padding-top: 6mm;
+        text-align: justify;
+    }
+    
+    </css>
+    
+    </style>
+</head>
+<body>
+    
+    <div class="page cover-page">
+        <div class="cover-top">
+            <div class="cover-brand">NOVA CONNECT<span>EGYPT</span></div>
+            <div class="cover-title">
+                ANNUAL ESG &<br>SUSTAINABILITY
+                <span>REPORT 2026</span>
+            </div>
+        </div>
+        <div class="cover-bottom">
+            <img class="cover-network-bg" src="charts/cover_network.png" alt="Connectivity Network">
+            <div class="cover-tagline">
+                Connecting People.<br>Empowering Communities.<br>Building a Sustainable Future.
+            </div>
+            <div class="cover-metadata">
+                <span>REPORTING YEAR: <strong>2026</strong></span>
+                <span>PUBLISHED: <strong>AUGUST 2026</strong></span>
+                <span>LOCATION: <strong>CAIRO, EGYPT</strong></span>
+            </div>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>TABLE OF CONTENTS</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Table of Contents</h1>
+            <p class="lead-paragraph">This report provides a comprehensive review of Nova Connect Egypt's Environmental, Social, and Governance (ESG) strategy, performance, and key milestones for the calendar year ended 31 December 2026.</p>
+            
+            <div class="toc-list">
+                <div>
+                    <div class="toc-item"><span class="toc-num">01</span><span class="toc-name">About This Report</span><span class="toc-page">03</span></div>
+                    <div class="toc-item"><span class="toc-num">02</span><span class="toc-name">CEO Message</span><span class="toc-page">04</span></div>
+                    <div class="toc-item"><span class="toc-num">03</span><span class="toc-name">About Nova Connect Egypt</span><span class="toc-page">06</span></div>
+                    <div class="toc-item"><span class="toc-num">04</span><span class="toc-name">ESG Strategy</span><span class="toc-page">09</span></div>
+                    <div class="toc-item"><span class="toc-num">05</span><span class="toc-name">Materiality Assessment</span><span class="toc-page">11</span></div>
+                    <div class="toc-item"><span class="toc-num">06</span><span class="toc-name">SDG Contribution</span><span class="toc-page">13</span></div>
+                    <div class="toc-item"><span class="toc-num">07</span><span class="toc-name">ESG Performance at a Glance</span><span class="toc-page">14</span></div>
+                    <div class="toc-item"><span class="toc-num">08</span><span class="toc-name">Governance: Corporate & Board</span><span class="toc-page">16</span></div>
+                    <div class="toc-item"><span class="toc-num">09</span><span class="toc-name">Ethics, Compliance & Conduct</span><span class="toc-page">17</span></div>
+                    <div class="toc-item"><span class="toc-num">10</span><span class="toc-name">Data Privacy & Cybersecurity</span><span class="toc-page">18</span></div>
+                </div>
+                <div>
+                    <div class="toc-item"><span class="toc-num">11</span><span class="toc-name">Responsible Supply Chain</span><span class="toc-page">19</span></div>
+                    <div class="toc-item"><span class="toc-num">12</span><span class="toc-name">Digital Inclusion Programs</span><span class="toc-page">22</span></div>
+                    <div class="toc-item"><span class="toc-num">13</span><span class="toc-name">Community & Social Impact</span><span class="toc-page">24</span></div>
+                    <div class="toc-item"><span class="toc-num">14</span><span class="toc-name">Our People & D&I</span><span class="toc-page">27</span></div>
+                    <div class="toc-item"><span class="toc-num">15</span><span class="toc-name">Environmental Policy & Energy</span><span class="toc-page">33</span></div>
+                    <div class="toc-item"><span class="toc-num">16</span><span class="toc-name">Climate, Emissions & Water</span><span class="toc-page">36</span></div>
+                    <div class="toc-item"><span class="toc-num">17</span><span class="toc-name">Waste & Circular Economy</span><span class="toc-page">40</span></div>
+                    <div class="toc-item"><span class="toc-num">18</span><span class="toc-name">ESG Targets & Progress</span><span class="toc-page">43</span></div>
+                    <div class="toc-item"><span class="toc-num">19</span><span class="toc-name">ESG Data Tables</span><span class="toc-page">45</span></div>
+                    <div class="toc-item"><span class="toc-num">20</span><span class="toc-name">GRI Index & Assurance</span><span class="toc-page">48</span></div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15mm; background: #F6F6F6; padding: 5mm; border-left: 4px solid #FF7900;">
+                <h3 style="margin-top:0;">Key Editorial Highlights</h3>
+                <p style="font-size: 11px; margin-bottom: 0;">This year's report focuses heavily on our <strong>green network evolution</strong>—replacing off-grid diesel generators with hybrid solar solutions—and our expanded <strong>digital learning hubs</strong> across rural provinces in Egypt. All mathematical trends, absolute values, and baseline comparisons have been fully checked for alignment with international reporting codes.</p>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 2</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>01 — ABOUT THIS REPORT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>About This Report</h1>
+            <div class="grid-2-asym" style="gap: 8mm;">
+                <div>
+                    <h2>Reporting Frameworks & Bound</h2>
+                    <p>This report contains details of the Environmental, Social, and Governance (ESG) performance of <strong>Nova Connect Egypt S.A.E.</strong> and all of its direct subsidiaries under operating control in the Arab Republic of Egypt. The reporting period is from <strong>1 January 2026 to 31 December 2026</strong>. Historical comparative data represents calendar years 2024 and 2025.</p>
+                    
+                    <p>We prepare our disclosures in accordance with the <strong>Global Reporting Initiative (GRI) Standards</strong> (Universal Standards 2021). Furthermore, this report is mapped to the <strong>United Nations Sustainable Development Goals (SDGs)</strong> and leverages indicators inspired by the <strong>Sustainability Accounting Standards Board (SASB)</strong> for the Telecommunications Services industry. In our climate sections, we follow recommendations outlined by the <strong>Task Force on Climate-related Financial Disclosures (TCFD)</strong>.</p>
+                    
+                    <h3>Reporting Principles</h3>
+                    <p>We strive to apply the highest quality reporting principles to ensure the trust and credibility of our ESG statements:
+                    <br>• <strong>Accuracy:</strong> Quantifying energy, emissions, and labor hours using measured data.
+                    <br>• <strong>Balance:</strong> Outlining both achievements and operational challenges.
+                    <br>• <strong>Clarity:</strong> Structuring chapters with simple terminology and clean data visualization.
+                    <br>• <strong>Comparability:</strong> Presenting identical baseline parameters across a 3-year timeline.</p>
+                </div>
+                <div>
+                    <div style="background: #F6F6F6; padding: 5mm; border-top: 4px solid #1F1F1F; margin-bottom: 5mm;">
+                        <h3 style="margin-top:0; color:#1F1F1F;">Report at a Glance</h3>
+                        <p style="font-size: 11px; margin-bottom: 2mm;"><strong>Reporting Year:</strong> 2026</p>
+                        <p style="font-size: 11px; margin-bottom: 2mm;"><strong>Standards:</strong> GRI Standards, UN SDGs</p>
+                        <p style="font-size: 11px; margin-bottom: 2mm;"><strong>Coverage:</strong> 100% of operations in Egypt</p>
+                        <p style="font-size: 11px; margin-bottom: 2mm;"><strong>Assurance:</strong> Limited external assurance</p>
+                        <p style="font-size: 11px; margin-bottom: 0;"><strong>Currency:</strong> Egyptian Pound (EGP)</p>
+                    </div>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm;">
+                        <h3 style="margin-top:0;">Reporting Timeline</h3>
+                        <div style="border-left: 2px solid #FF7900; padding-left: 3mm; margin-top: 3mm; font-size:10.5px;">
+                            <p style="font-size:10.5px; margin-bottom:2mm;"><strong>Q1-Q2 2026:</strong> Stakeholder interviews & materiality verification.</p>
+                            <p style="font-size:10.5px; margin-bottom:2mm;"><strong>Q3-Q4 2026:</strong> Data aggregation and mid-year tracking.</p>
+                            <p style="font-size:10.5px; margin-bottom:0;"><strong>Q1-Q2 2027:</strong> External audits and assurance process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 3</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>02 — CEO MESSAGE</span>
+        </div>
+        <div style="margin-top: 8mm; height: 100%;">
+            <h1>CEO Message</h1>
+            <div class="grid-2" style="height: 220mm; gap: 8mm;">
+                <div style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <h2>Connecting Egypt to a Sustainable Horizon</h2>
+                        <p class="lead-paragraph" style="font-size:14px; border-left-color: #FF7900; line-height: 1.6; color:#FF7900;">
+                            "In 2026, we accelerated our network expansion and green transition, demonstrating that connectivity and sustainability go hand in hand. By building a green, digital infrastructure, we are securing Egypt's future."
+                        </p>
+                        <p>As Egypt undergoes an unprecedented digital transformation, the responsibility on telecommunications infrastructure providers is clearer than ever. Digital connectivity is no longer just a driver of convenience; it is the vital foundation of modern economic development, quality education, healthcare, and social equity.</p>
+                        <p>At Nova Connect Egypt, our vision is built on three core ideas: connecting the unconnected, minimizing our impact on the environment, and running our business with absolute compliance and integrity. Over the past year, we have made outstanding progress in reducing Scope 1 and 2 emissions and expanding our digital learning networks to rural provinces across Egypt.</p>
+                    </div>
+                    <div>
+                        <div class="ceo-signature-area">
+                            <div>
+                                <p style="margin-bottom:1mm; font-weight:700; color:#1F1F1F;">Mariam Hassan</p>
+                                <p style="margin-bottom:0; font-size:10px; color:#555555; text-transform:uppercase;">Chief Executive Officer</p>
+                            </div>
+                            <div class="signature-font">Mariam Hassan</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="ceo-portrait-box">
+                        <div class="ceo-portrait-icon">👤</div>
+                        <div style="font-size:13px; font-weight:700; letter-spacing:1px; margin-bottom:1.5mm;">MARIAM HASSAN</div>
+                        <div style="font-size:9.5px; font-weight:400; color:#FF7900; text-transform:uppercase; letter-spacing:2px;">Chief Executive Officer</div>
+                        <div style="position:absolute; bottom:5mm; left:5mm; right:5mm; text-align:center; font-size:9px; color:#888888;">
+                            Nova Connect Egypt S.A.E.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 4</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>02 — CEO MESSAGE (CONT.)</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>CEO Message</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Pioneering the Green Telecom Transition</h2>
+                    <p>In 2026, we achieved a significant operational milestone by reaching 54% renewable energy integration across our network. This was accomplished by replacing off-grid diesel generators with hybrid solar solutions in rural towers, combined with purchasing clean energy contracts for our urban switching centers. This green transition has driven a 14% absolute reduction in our total carbon footprint, proving that telecommunication services can expand without increasing ecological harm.</p>
+                    
+                    <p>Moreover, we launched our circular economy initiative, <em>"From Old Devices to New Value"</em>. Through this program, we recycled over 84,000 mobile phones and network devices, preventing toxic electronic waste from reaching landfills and recovering precious raw materials.</p>
+                    
+                    <h2>Deepening Our Social Contract</h2>
+                    <p>Digital inclusion remains our primary vehicle for community empowerment. We expanded our Digital Learning Centers across rural provinces in Upper Egypt and the Delta region. These facilities provide critical IT skills, digital literacy, and internet access to communities that previously lacked basic connection infrastructure.</p>
+                </div>
+                <div>
+                    <p>Through our affordable connectivity and specialized services, we served 184,000 digital inclusion beneficiaries in 2026. This represents a 27% increase compared to 2025. We believe that true digital transformation is only successful if it includes everyone, which is why we continue to expand our network coverage in rural communities.</p>
+                    
+                    <h2>Strengthening Governance & Trust</h2>
+                    <p>Underpinning our social and environmental goals is a rigorous commitment to corporate governance. We completed cybersecurity and data privacy audits for all our operations. 100% of our office and retail staff completed compliance training. By ensuring transparency, ethical data management, and secure transactions, we maintain the trust of our 18.6 million subscribers.</p>
+                    
+                    <p>Looking ahead, we will continue to invest in energy efficiency, network expansion, and employee wellbeing. I want to express my gratitude to our board, partners, and employees for their commitment. Together, we are building a digital, sustainable future for Egypt.</p>
+                    
+                    <div style="margin-top: 6mm; border-top: 2px solid #FF7900; padding-top: 4mm;">
+                        <h3 style="margin-top:0; color:#FF7900;">2027 Key Strategic Priorities</h3>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;">• Reaching 60% renewable energy integration.</p>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;">• Deploying an additional 50 solar-powered rural towers.</p>
+                        <p style="font-size:10.5px; margin-bottom:0;">• Expanding our digital inclusion programs to target 250,000 beneficiaries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 5</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>03 — COMPANY PROFILE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Company Profile</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Connecting Millions Daily</h2>
+                    <p>Founded in 2005, <strong>Nova Connect Egypt</strong> has grown to become a cornerstone of the nation's telecommunications landscape. We provide voice, high-speed mobile data, fiber broadband, cloud enterprise solutions, and digital financial services to over 18.6 million subscribers. Headquartered in Cairo, our footprint spans all 27 governorates of Egypt.</p>
+                    
+                    <p>Our business model is built around driving digital accessibility and innovation. We serve three key customer segments:
+                    <br>• <strong>Consumers:</strong> Providing reliable voice, 4G/5G mobile broadband, and high-speed home fiber networks.
+                    <br>• <strong>Enterprise:</strong> Supporting Egyptian small, medium, and large corporations with dedicated internet, secure cloud hosting, and IoT automation systems.
+                    <br>• <strong>Public Sector:</strong> Partnering with national entities to build secure data networks and digital public infrastructure.</p>
+                    
+                    <h2>Digital Financial Services</h2>
+                    <p>Through our digital wallet platform, <strong>NovaCash</strong>, we provide digital payment services to millions of unbanked and underbanked citizens across Egypt, facilitating financial inclusion and supporting the cash-lite national economy.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#1F1F1F; color:#FFFFFF;">
+                        <span style="font-size:28px; color:#FF7900; margin-bottom:2mm;">📡</span>
+                        <span>Nova Connect Headquarters</span>
+                        <span style="font-size:9px; color:#888888; font-weight:400; margin-top:1.5mm;">Cairo, Egypt</span>
+                    </div>
+                    
+                    <h3>Corporate Mission</h3>
+                    <p>To provide high-quality, inclusive digital connectivity that empowers individuals, supports business growth, and drives sustainable environmental and social development across Egypt.</p>
+                    
+                    <h3>Brand Identity</h3>
+                    <p>Our corporate identity is built around bold innovation and trust. The primary orange branding represents energy, accessibility, and communication, while the dark charcoal highlights structure, governance, and operational resilience.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 6</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>03 — INFRASTRUCTURE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Infrastructure & Connectivity</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Core Network Foundations</h2>
+                    <p>The strength of Nova Connect Egypt lies in our modern physical network. Over the last decade, we have made major investments to build a high-performance network that reaches the most remote areas of the country. In 2026, we expanded our total network coverage to 98.7% of the population, ensuring reliable communications for residential and business users alike.</p>
+                    
+                    <p>Our 4G infrastructure now covers 97.5% of the population, while our high-speed 5G network, which began roll-out in major metropolitan centers, has reached 72% coverage. This advanced 5G network supports high-speed data transmission and low latency, enabling industrial automation and advanced digital services.</p>
+                    
+                    <h2>A Green Network Transformation</h2>
+                    <p>We are actively transitioning our network infrastructure to be environmentally sustainable. This includes:
+                    <br>• Deploying solar-hybrid power units to rural base stations.
+                    <br>• Upgrading our metropolitan server farms with high-efficiency cooling.
+                    <br>• Sharing network towers with industry peers to minimize raw material usage and footprint.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#FF7900; color:#FFFFFF;">
+                        <span style="font-size:28px; color:#FFFFFF; margin-bottom:2mm;">📶</span>
+                        <span>5G Network Antenna Tower</span>
+                        <span style="font-size:9px; color:#FFFFFF; opacity:0.8; font-weight:400; margin-top:1.5mm;">Cairo Tower Cluster</span>
+                    </div>
+                    
+                    <h3>Connectivity Highlights</h3>
+                    <p>Our fiber optic network now spans thousands of kilometers, connecting metropolitan areas with rural provinces. This enables high-speed data backhaul, supporting local businesses and enabling our digital learning centers to function with high-speed internet.</p>
+                    
+                    <h3>Customer Service Infrastructure</h3>
+                    <p>With 145 service centers and a digital customer support system, we ensure that technical queries, billing adjustments, and subscriber services are managed with speed and transparency.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 7</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>COMPANY PROFILE AT A GLANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Company at a Glance</h1>
+            <p class="lead-paragraph">Our scale and reach in numbers. These figures show the footprint and financial resilience of Nova Connect Egypt, which supports our extensive ESG investments.</p>
+            
+            <div class="kpi-grid-4x2" style="margin-top:15mm;">
+                <div class="kpi-card">
+                    <span class="kpi-title">Founded</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">2005</span>
+                    <span class="kpi-trend">Cairo, Egypt HQ</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Total Employees</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">4,850</span>
+                    <span class="kpi-trend">Full-Time Equivalent</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Subscribers</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">18.6M</span>
+                    <span class="kpi-trend">Mobile & Broadband</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Annual Revenue</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">EGP 42.8B</span>
+                    <span class="kpi-trend">For FY 2026</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Network Coverage</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">98.7%</span>
+                    <span class="kpi-trend">Egypt Population</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">4G Coverage</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">97.5%</span>
+                    <span class="kpi-trend">Egypt Population</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">5G Coverage</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">72.0%</span>
+                    <span class="kpi-trend">Major Cities</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Service Centers</span>
+                    <span class="kpi-value" style="font-size:24px; color:#FF7900;">145</span>
+                    <span class="kpi-trend">Retail Locations</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15mm; border: 1.5px solid #E5E5E5; padding: 6mm;">
+                <h2>A Key Contributor to Egypt's Vision 2030</h2>
+                <p style="margin-bottom:0;">Nova Connect Egypt aligns its infrastructure expansion and service offering with the sustainable development priorities of the Egyptian government. Our network deployment directly supports the digitization of public services, financial inclusion initiatives, and clean energy transition programs, serving as an accelerator for Egypt's Vision 2030 framework.</p>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 8</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>04 — ESG STRATEGY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>ESG Strategy</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Our Three-Pillar Framework</h2>
+                    <p>At Nova Connect Egypt, our sustainability roadmap is integrated directly into our corporate strategy. Rather than viewing sustainability as a separate compliance activity, we structure our business operations around three pillars: <strong>Environment, Social, and Governance (ESG)</strong>.</p>
+                    
+                    <p>This approach ensures that our network investments, community development, and governance structures work together to deliver shared value for shareholders, employees, customers, and society.</p>
+                    
+                    <h3>1. Environment (Green Network)</h3>
+                    <p>We focus on decoupling network growth from resource consumption and carbon emissions. Our key environmental priorities include transition to renewable energy sources, network energy efficiency upgrades, water footprint optimization, and implementing circular economy practices for electronic waste.</p>
+                    
+                    <h3>2. Social (Inclusive Connectivity)</h3>
+                    <p>Our social initiatives focus on bridging the digital divide and empowering communities. We support digital inclusion through rural infrastructure, local community investments, and providing IT skills training. Internally, we prioritize employee health and safety, professional development, and maintaining diversity and inclusion across all tiers of leadership.</p>
+                </div>
+                <div>
+                    <h3>3. Governance (Responsible Leadership)</h3>
+                    <p>Ethics, data privacy, and compliance form the foundation of our business. We ensure robust risk management, transparent reporting, strict data protection, cybersecurity resilience, and a responsible supply chain that enforces ESG compliance among our partners.</p>
+                    
+                    <div style="background: #F6F6F6; padding: 5mm; border-left: 4px solid #FF7900; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#1F1F1F; text-transform:uppercase; font-size:11px;">ESG Strategy Integration</h4>
+                        <p style="font-size:11px; margin-bottom:0;">Our ESG strategy is overseen directly by the Board's dedicated Sustainability and Risk Committee. This ensures that environmental performance, cyber risk, compliance, and social investments are reviewed quarterly at the executive level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 9</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>04 — ESG STRATEGY FRAMEWORK</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>ESG Strategy Diagram</h1>
+            <p class="lead-paragraph">A structured visualization of our priorities, targets, and key metrics across the three ESG pillars.</p>
+            
+            <div class="pillar-container">
+                <!-- Pillar 1 -->
+                <div class="pillar-box pillar-env">
+                    <div class="pillar-icon-area"><span class="pillar-icon-svg">🌱</span></div>
+                    <div class="pillar-title">Environment</div>
+                    <div class="pillar-desc">Minimizing our environmental footprint and accelerating the green network transition.</div>
+                    
+                    <div class="pillar-bullet-title">Priorities</div>
+                    <ul class="pillar-bullets">
+                        <li>Carbon footprint reduction</li>
+                        <li>Renewable energy transition</li>
+                        <li>Circular e-waste recycling</li>
+                        <li>Water reuse & efficiency</li>
+                    </ul>
+                    
+                    <div class="pillar-kpis-list">
+                        <div class="pillar-kpis-title">Key KPIs</div>
+                        <div class="pillar-kpi-item"><span>Renewable Share</span><span>54%</span></div>
+                        <div class="pillar-kpi-item"><span>GHG Reduction</span><span>14% YoY</span></div>
+                        <div class="pillar-kpi-item"><span>Recycling Rate</span><span>75.5%</span></div>
+                    </div>
+                </div>
+                
+                <!-- Pillar 2 -->
+                <div class="pillar-box pillar-soc">
+                    <div class="pillar-icon-area"><span class="pillar-icon-svg">🤝</span></div>
+                    <div class="pillar-title">Social</div>
+                    <div class="pillar-desc">Bridging the digital divide, protecting people, and empowering communities.</div>
+                    
+                    <div class="pillar-bullet-title">Priorities</div>
+                    <ul class="pillar-bullets">
+                        <li>Digital inclusion & rural access</li>
+                        <li>Community investments</li>
+                        <li>Diversity, equity & inclusion</li>
+                        <li>Employee safety & wellbeing</li>
+                    </ul>
+                    
+                    <div class="pillar-kpis-list">
+                        <div class="pillar-kpis-title">Key KPIs</div>
+                        <div class="pillar-kpi-item"><span>Inclusion Benef.</span><span>184,000</span></div>
+                        <div class="pillar-kpi-item"><span>Women in Workforce</span><span>43%</span></div>
+                        <div class="pillar-kpi-item"><span>Training Hours</span><span>72,500</span></div>
+                    </div>
+                </div>
+                
+                <!-- Pillar 3 -->
+                <div class="pillar-box pillar-gov">
+                    <div class="pillar-icon-area"><span class="pillar-icon-svg">⚖️</span></div>
+                    <div class="pillar-title">Governance</div>
+                    <div class="pillar-desc">Ensuring trust, data privacy, compliance, and supply chain integrity.</div>
+                    
+                    <div class="pillar-bullet-title">Priorities</div>
+                    <ul class="pillar-bullets">
+                        <li>Ethics, compliance & conduct</li>
+                        <li>Customer data protection</li>
+                        <li>Cybersecurity resilience</li>
+                        <li>Supplier ESG audits</li>
+                    </ul>
+                    
+                    <div class="pillar-kpis-list">
+                        <div class="pillar-kpis-title">Key KPIs</div>
+                        <div class="pillar-kpi-item"><span>Ethics Training</span><span>98%</span></div>
+                        <div class="pillar-kpi-item"><span>Cyber Training</span><span>100%</span></div>
+                        <div class="pillar-kpi-item"><span>Supplier Audits</span><span>87%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 10</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>05 — MATERIALITY ASSESSMENT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Materiality Assessment</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Materiality Assessment Process</h2>
+                    <p>To ensure our report focuses on topics of greatest impact, we conduct a structured materiality assessment every two years. This process is designed to align with the GRI Materiality Principles, evaluating topics based on both their impact on society and the environment, and their relevance to business strategy and financial performance.</p>
+                    
+                    <p>Our assessment follows 7 steps:
+                    <br>1. <strong>Stakeholder identification:</strong> Mapping our key stakeholder groups.
+                    <br>2. <strong>Stakeholder engagement:</strong> Surveys and interviews with stakeholders.
+                    <br>3. <strong>Topic identification:</strong> Aggregating standard ESG topics.
+                    <br>4. <strong>Impact assessment:</strong> Outlining social/environmental impact.
+                    <br>5. <strong>Business relevance:</strong> Analyzing economic implications.
+                    <br>6. <strong>Prioritization:</strong> Scoring and sorting topics.
+                    <br>7. <strong>Management validation:</strong> Executive committee sign-off.</p>
+                    
+                    <h3>Key Stakeholders</h3>
+                    <p>We engage with 8 primary stakeholder groups:
+                    <br>• Employees, Customers, and Investors
+                    <br>• Regulators, Suppliers, and Communities
+                    <br>• NGOs and Business partners</p>
+                </div>
+                <div>
+                    <h3>Prioritized Material Topics</h3>
+                    <p>Our analysis identified 12 key material topics grouped into priorities. The highest priority topics require active management and detailed disclosure:
+                    <br>• <strong>Cybersecurity & Data Privacy:</strong> High importance due to expanding cloud networks and financial services.
+                    <br>• <strong>Climate Change & Energy:</strong> Driven by energy costs and grid transition.
+                    <br>• <strong>Digital Inclusion:</strong> Crucial for rural communities and social license.
+                    <br>• <strong>Business Ethics:</strong> The foundation of all compliance operations.</p>
+                    
+                    <div style="background: #F6F6F6; padding: 5.5mm; border-left: 4px solid #FF7900; margin-top: 6mm;">
+                        <h4 style="margin-top:0; font-size:11px; text-transform:uppercase;">Stakeholder Dialogue</h4>
+                        <p style="font-size:11px; margin-bottom:0; text-align:justify;">In 2026, we collected feedback from over 2,400 survey respondents, including employees, customers, and retail partners. Their feedback directly shaped the focus of our environmental and digital training programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 11</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>05 — MATERIALITY MATRIX</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Materiality Assessment Matrix</h1>
+            <p class="lead-paragraph">The chart below visualizes the 12 material topics mapped by stakeholder importance and impact on business. Topics in the top-right orange quadrant represent our critical ESG priority areas.</p>
+            
+            <div class="chart-container" style="height: 165mm;">
+                <img src="charts/materiality_matrix.png" alt="Materiality Matrix 2026">
+            </div>
+            
+            <div style="margin-top: 4mm; font-size: 10.5px; line-height: 1.5; color: #555555; text-align: justify;">
+                <strong>Interpretation Note:</strong> Out of the 12 assessed topics, <em>Cybersecurity</em> and <em>Data Privacy</em> scored the highest on both axes, reflecting their critical role in our digital financial and cloud systems. This is followed closely by <em>Business Ethics</em>, <em>Digital Inclusion</em>, and <em>Climate Change</em>.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 12</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>06 — UN SDG MAPPING</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>SDG Contribution Matrix</h1>
+            <p class="lead-paragraph">We map our ESG initiatives directly to the United Nations Sustainable Development Goals, focusing on the 9 goals where Nova Connect Egypt has the greatest impact.</p>
+            
+            <div class="sdg-grid">
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-4">4</div>
+                        <div class="sdg-title-text">Quality<br>Education</div>
+                    </div>
+                    <span class="sdg-initiative">Digital Learning Centers and IT skills training programs for rural provinces.</span>
+                    <span class="sdg-kpi-label">76,500 trained</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-5">5</div>
+                        <div class="sdg-title-text">Gender<br>Equality</div>
+                    </div>
+                    <span class="sdg-initiative">Promoting gender balance in technical roles and senior management.</span>
+                    <span class="sdg-kpi-label">43% Women</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-8">8</div>
+                        <div class="sdg-title-text">Decent Work &<br>Econ Growth</div>
+                    </div>
+                    <span class="sdg-initiative">Providing safe workplaces, career training, and financial services to unbanked.</span>
+                    <span class="sdg-kpi-label">87% Engagement</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-9">9</div>
+                        <div class="sdg-title-text">Industry &<br>Infrastructure</div>
+                    </div>
+                    <span class="sdg-initiative">Expanding 5G access and fiber infrastructure across industrial zones.</span>
+                    <span class="sdg-kpi-label">72% 5G Cover</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-10">10</div>
+                        <div class="sdg-title-text">Reduced<br>Inequalities</div>
+                    </div>
+                    <span class="sdg-initiative">Bridging the digital divide in rural areas with affordable data services.</span>
+                    <span class="sdg-kpi-label">320 rural comms</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-12">12</div>
+                        <div class="sdg-title-text">Responsible<br>Consumption</div>
+                    </div>
+                    <span class="sdg-initiative">Recycling mobile devices and implementing e-waste recovery.</span>
+                    <span class="sdg-kpi-label">84k devices rec.</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-13">13</div>
+                        <div class="sdg-title-text">Climate<br>Action</div>
+                    </div>
+                    <span class="sdg-initiative">Transitioning network towers to hybrid solar energy systems.</span>
+                    <span class="sdg-kpi-label">↓ 14% Emissions</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-16">16</div>
+                        <div class="sdg-title-text">Peace &<br>Justice</div>
+                    </div>
+                    <span class="sdg-initiative">Operating with strict anti-corruption policies, compliance, and ethics.</span>
+                    <span class="sdg-kpi-label">98% training</span>
+                </div>
+                
+                <div class="sdg-box">
+                    <div class="sdg-header-bar">
+                        <div class="sdg-num-box sdg-17">17</div>
+                        <div class="sdg-title-text">Partnerships<br>for Goals</div>
+                    </div>
+                    <span class="sdg-initiative">Collaborating with the Ministry of Communications and NGOs for digital access.</span>
+                    <span class="sdg-kpi-label">52 startups supp.</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 13</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>07 — ESG PERFORMANCE DASHBOARD</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>ESG Performance Dashboard</h1>
+            <p class="lead-paragraph">An overview of our key ESG indicators for 2026, showing performance figures and progress compared to our 2025 values.</p>
+            
+            <div class="kpi-grid-4x3" style="margin-top: 5mm;">
+                <!-- 1 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">CO₂ Emissions</span>
+                    <span class="kpi-value">186,400</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">tCO₂e (Scope 1+2+3)</span>
+                    <span class="kpi-trend trend-down">↓ 14% YoY</span>
+                </div>
+                <!-- 2 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Renewable Energy</span>
+                    <span class="kpi-value">54%</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Grid Share</span>
+                    <span class="kpi-trend trend-up">↑ 11% YoY</span>
+                </div>
+                <!-- 3 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Energy Consumption</span>
+                    <span class="kpi-value">412,000</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">MWh Total</span>
+                    <span class="kpi-trend trend-down">↓ 7% YoY</span>
+                </div>
+                <!-- 4 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Water Consumption</span>
+                    <span class="kpi-value">96,000</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">m³ Total</span>
+                    <span class="kpi-trend trend-down">↓ 5% YoY</span>
+                </div>
+                <!-- 5 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Women in Workforce</span>
+                    <span class="kpi-value">43%</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Total FTE</span>
+                    <span class="kpi-trend trend-up">↑ 3% YoY</span>
+                </div>
+                <!-- 6 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Women Leadership</span>
+                    <span class="kpi-value">38%</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Managerial Levels</span>
+                    <span class="kpi-trend trend-up">↑ 6% YoY</span>
+                </div>
+                <!-- 7 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Employee Training</span>
+                    <span class="kpi-value">72,500</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Hours Total</span>
+                    <span class="kpi-trend trend-up">↑ 18% YoY</span>
+                </div>
+                <!-- 8 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Digital Inclusion</span>
+                    <span class="kpi-value">184,000</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Beneficiaries Reached</span>
+                    <span class="kpi-trend trend-up">↑ 27% YoY</span>
+                </div>
+                <!-- 9 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Community Invest.</span>
+                    <span class="kpi-value">96M</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">EGP Invested</span>
+                    <span class="kpi-trend trend-up">↑ 12% YoY</span>
+                </div>
+                <!-- 10 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Recycled Devices</span>
+                    <span class="kpi-value">84,000</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">E-waste Collected</span>
+                    <span class="kpi-trend trend-up">↑ 21% YoY</span>
+                </div>
+                <!-- 11 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Customer Satisfac.</span>
+                    <span class="kpi-value">91%</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">NPS Score</span>
+                    <span class="kpi-trend trend-up">↑ 4% YoY</span>
+                </div>
+                <!-- 12 -->
+                <div class="kpi-card">
+                    <span class="kpi-title">Cyber Training</span>
+                    <span class="kpi-value">100%</span>
+                    <span class="kpi-title" style="font-size:8px; margin-top:-1mm;">Employee Completion</span>
+                    <span class="kpi-trend trend-up">↑ 2% YoY</span>
+                </div>
+            </div>
+            
+            <p style="font-size: 10.5px; line-height: 1.5; color: #555555; margin-top: 10mm; text-align: justify;">
+                <strong>Performance Summary:</strong> We achieved positive trends across all twelve key indicators in 2026. Environmental indicators like carbon, energy, and water decreased due to operational improvements. Social and governance indicators showed growth, highlighting our expanded community programs and cyber compliance.
+            </p>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 14</span>
+        </div>
+    </div>
+    \n
+    <div class="page divider-page">
+        <div class="divider-inner-charcoal">
+            <div class="div-num">01</div>
+            <div>
+                <div class="div-title">
+                    Responsible Business<br>& Governance
+                    <span>Ensuring compliance, data privacy, and ethical operations.</span>
+                </div>
+            </div>
+            <div class="div-quote">
+                "We believe that trust and integrity are the cornerstones of sustainable digital development."
+            </div>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>08 — CORPORATE GOVERNANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Corporate Governance</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Governance & Board Structure</h2>
+                    <p>At Nova Connect Egypt, our corporate governance framework is designed to promote long-term value creation, transparent oversight, and accountability to stakeholders. The Board of Directors sits at the center of this framework, providing strategic direction and risk management guidance.</p>
+                    
+                    <p>In 2026, our Board consisted of 11 members, with a composition focused on diversity, independent oversight, and sector expertise:
+                    <br>• <strong>Independent Directors:</strong> 5 out of 11 members are independent non-executives, exceeding local corporate governance requirements.
+                    <br>• <strong>Board Meetings:</strong> The Board convened 8 times during the fiscal year 2026, with an overall attendance rate of 97%.
+                    <br>• <strong>Committees:</strong> Four dedicated Board committees support targeted oversight: the Audit Committee, the Remuneration Committee, the Nomination Committee, and the Sustainability & Risk Committee.</p>
+                </div>
+                <div>
+                    <h3>Board Diversity & Independence</h3>
+                    <p>We believe that cognitive diversity improves Board decision-making. Women represent 27% of our Board seats. The Audit and Sustainability Committees are chaired by independent directors to ensure neutral, transparent review.</p>
+                    
+                    <div style="background: #F6F6F6; padding: 5mm; border-left: 4px solid #1F1F1F; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#1F1F1F; font-size:11px; text-transform:uppercase;">Sustainability Committee</h4>
+                        <p style="font-size:11px; margin-bottom:0; text-align:justify;">Established in 2024, the Sustainability & Risk Committee oversees climate risk assessment, emissions reductions, health and safety, cyber threat exposure, and social investment budgets, meeting quarterly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 16</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>09 — ETHICS & COMPLIANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Ethics & Compliance</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Operating with Absolute Integrity</h2>
+                    <p>Our reputation is our most valuable asset. Nova Connect Egypt enforces a zero-tolerance policy toward bribery, corruption, and anti-competitive behavior. Our corporate compliance framework is built on our Code of Conduct, which is signed by all employees, directors, and consultants.</p>
+                    
+                    <p>Key components of our compliance program include:
+                    <br>• <strong>Ethics Training:</strong> In 2026, 98% of employees completed our mandatory annual compliance and ethics training program.
+                    <br>• <strong>Whistleblowing Channels:</strong> We operate secure, anonymous hotlines and web portals, managed by an independent third party, to report potential violations.
+                    <br>• <strong>Whistleblower Protection:</strong> Our policies prohibit retaliation against any employee reporting in good faith.</p>
+                </div>
+                <div>
+                    <h3>Resolution of Ethics Cases</h3>
+                    <p>In 2026, we received 34 reports through our whistleblowing channels. All reports were investigated by our Internal Audit team, and 32 cases were resolved before year-end, leading to 5 contract terminations and policy updates.</p>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#FF7900;">Anti-Corruption Monitoring</h4>
+                        <p style="font-size:10.5px; margin-bottom:0;">All operations, including sales agents, retail branches, and supplier contracts, are audited annually for compliance risks. No legal cases regarding corruption or anti-competitive behavior were brought against Nova Connect Egypt in 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 17</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>10 — DATA PRIVACY & CYBERSECURITY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Data Privacy & Cybersecurity</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Protecting Customer Data</h2>
+                    <p>In an increasingly digital economy, data privacy and cybersecurity are critical risk areas. Nova Connect Egypt manages data in accordance with the Egyptian Data Protection Law (Law No. 151 of 2020) and aligns its processes with GDPR best practices for international transactions.</p>
+                    
+                    <p>Our data privacy framework includes:
+                    <br>• <strong>Privacy Officer (DPO):</strong> A dedicated Data Protection Officer oversees compliance and incident reviews.
+                    <br>• <strong>Sub-processor Audits:</strong> We evaluate all cloud providers and vendors for compliance.
+                    <br>• <strong>Cybersecurity Training:</strong> In 2026, we achieved a 100% completion rate for cybersecurity training among office and retail staff.</p>
+                </div>
+                <div>
+                    <h3>Cybersecurity Resilience</h3>
+                    <p>Our systems are protected by a 24/7 Security Operations Center (SOC). Our core systems are certified under <strong>ISO 27001</strong> for information security management. In 2026, we did not experience any major customer data breaches or security incidents that disrupted service.</p>
+                    
+                    <div style="background: #F6F6F6; padding: 5mm; border-top: 4px solid #FF7900; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#1F1F1F; font-size:11px; text-transform:uppercase;">Transaction Security</h4>
+                        <p style="font-size:11px; margin-bottom:0; text-align:justify;">Our NovaCash financial services utilize multi-factor authentication, end-to-end transaction encryption, and real-time fraud monitoring, keeping customer accounts secure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 18</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>11 — RESPONSIBLE SUPPLY CHAIN</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Responsible Supply Chain</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Enforcing ESG Standard</h2>
+                    <p>Our impact extends beyond our direct operations. Nova Connect Egypt works with a network of over 420 active suppliers, ranging from international equipment manufacturers to local construction and security services. We require all partners to adhere to our Supplier Code of Conduct.</p>
+                    
+                    <p>Our supply chain monitoring includes:
+                    <br>• <strong>Supplier ESG Screening:</strong> In 2026, 87% of active suppliers were screened for environmental and social criteria.
+                    <br>• <strong>Human Rights Screening:</strong> Evaluating labor practices, safety measures, and child labor prohibitions, particularly for field installation contractors.
+                    <br>• <strong>Local Sourcing:</strong> 64% of our procurement budget was spent on local Egyptian businesses, supporting domestic job creation.</p>
+                </div>
+                <div>
+                    <h3>Supplier Sustainability Audits</h3>
+                    <p>Our procurement team conducts audits for high-risk contractors. In 2026, we audited 45 key suppliers. 5 suppliers were required to implement corrective safety plans, and 1 contract was terminated due to repeated safety non-compliance.</p>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#FF7900;">2028 Supply Chain Target</h4>
+                        <p style="font-size:10.5px; margin-bottom:0;">We target screening 95% of active suppliers for environmental and social criteria by 2028, and requiring all Tier-1 suppliers to report energy and emissions data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 19</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>GOVERNANCE DATA TABLES</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Governance Indicators</h1>
+            <p class="lead-paragraph">The table below details our governance, ethics, privacy, and supply chain performance indicators over the past three reporting years.</p>
+            
+            <div class="table-container" style="margin-top:10mm;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Governance Metric</th>
+                            <th>Unit</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>2026</th>
+                            <th>YoY Direction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Board of Directors</td>
+                            <td>Count</td>
+                            <td>11</td>
+                            <td>11</td>
+                            <td>11</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Independent Board Directors</td>
+                            <td>Count</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Board Gender Diversity (Women)</td>
+                            <td>%</td>
+                            <td>18%</td>
+                            <td>27%</td>
+                            <td>27%</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Board Meetings Held</td>
+                            <td>Count</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>8</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Ethics Training Completion Rate</td>
+                            <td>%</td>
+                            <td>92%</td>
+                            <td>95%</td>
+                            <td>98%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Whistleblowing Cases Logged</td>
+                            <td>Count</td>
+                            <td>28</td>
+                            <td>31</td>
+                            <td>34</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Whistleblowing Cases Resolved</td>
+                            <td>Count</td>
+                            <td>27</td>
+                            <td>29</td>
+                            <td>32</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Data Privacy Breaches</td>
+                            <td>Count</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Cybersecurity Staff Training</td>
+                            <td>%</td>
+                            <td>95%</td>
+                            <td>98%</td>
+                            <td>100%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Suppliers Screened for ESG</td>
+                            <td>%</td>
+                            <td>68%</td>
+                            <td>78%</td>
+                            <td>87%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Local Procurement Share</td>
+                            <td>%</td>
+                            <td>58%</td>
+                            <td>61%</td>
+                            <td>64%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 20</span>
+        </div>
+    </div>
+    \n
+    <div class="page divider-page">
+        <div class="divider-inner-orange">
+            <div class="div-num">02</div>
+            <div>
+                <div class="div-title">
+                    Digital Inclusion<br>& Social Impact
+                    <span>Bridging the digital divide and investing in communities.</span>
+                </div>
+            </div>
+            <div class="div-quote">
+                "Connecting the unconnected is not just a commercial goal; it is our social contract."
+            </div>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>12 — DIGITAL INCLUSION</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Digital Inclusion</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Enabling Access for All</h2>
+                    <p>At Nova Connect Egypt, we believe that access to the digital economy is a fundamental right. Through our digital inclusion strategy, we work to lower the barriers of distance and cost, enabling rural communities, women, youth, and people with disabilities to access communication resources.</p>
+                    
+                    <p>Our digital inclusion activities cover five main areas:
+                    <br>• <strong>Digital Learning Centers:</strong> Deploying physical training labs equipped with high-speed internet and computers in rural areas.
+                    <br>• <strong>Digital Skills Training:</strong> Partnering with local NGOs to teach basic digital literacy, coding, and online business management.
+                    <br>• <strong>Affordable Data Packages:</strong> Providing low-cost connectivity rates for students and low-income families.
+                    <br>• <strong>Specialized Services:</strong> Creating accessible customer portals for people with disabilities.
+                    <br>• <strong>Rural Infrastructure:</strong> Expanding network coverage to remote locations in Upper Egypt.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#F6F6F6; color:#1F1F1F;">
+                        <span style="font-size:28px; color:#FF7900; margin-bottom:2mm;">💻</span>
+                        <span>Digital Learning Center</span>
+                        <span style="font-size:9px; color:#555555; font-weight:400; margin-top:1.5mm;">Rural Sohag Province, Egypt</span>
+                    </div>
+                    
+                    <h3>2026 Performance Highlights</h3>
+                    <p>In 2026, we expanded our programs, reaching 184,000 digital inclusion beneficiaries—representing a 27% growth over 2025. This includes 76,500 training participants and expanded services for people with disabilities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 22</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>12 — DIGITAL INCLUSION CASE STUDY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Case Study</h1>
+            
+            <div class="case-study-box">
+                <div class="case-study-header">Rural Connectivity Initiative</div>
+                <div class="case-study-title">Connecting Rural Communities in Upper Egypt</div>
+                
+                <div class="case-study-grid">
+                    <div>
+                        <h3>The Challenge</h3>
+                        <p>Many remote villages in the Sohag and Qena governorates lacked high-speed telecommunications infrastructure. The absence of reliable networks restricted local access to digital banking, online schooling, and telemedicine, widening the rural-urban digital divide.</p>
+                        
+                        <h3>The Initiative</h3>
+                        <p>Nova Connect Egypt launched the <em>Rural Connectivity Initiative</em> to deploy solar-powered cellular towers in remote villages. Alongside infrastructure, we partnered with local communities to open Digital Learning Centers, providing free computer and internet access.</p>
+                        
+                        <h3>The Impact</h3>
+                        <p>By December 2026, the program successfully connected 320 rural communities, providing high-speed mobile data to over 184,000 residents and supporting local schools and digital banking services.</p>
+                    </div>
+                    <div>
+                        <div class="case-study-kpis">
+                            <div>
+                                <span class="case-kpi-val">320</span>
+                                <span class="case-kpi-lbl">Rural Communities Connected</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">184k</span>
+                                <span class="case-kpi-lbl">Beneficiaries Reached</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">52</span>
+                                <span class="case-kpi-lbl">Rural Schools Supported</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">100%</span>
+                                <span class="case-kpi-lbl">Solar-Powered Base Towers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 6mm; font-size:11px; line-height:1.5; color:#555555; text-align:justify;">
+                <strong>Sustainability Impact:</strong> Deploying solar-powered base stations instead of diesel generators avoided an estimated 2,400 tonnes of CO₂ emissions in 2026, while providing reliable communication services to remote villages.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 23</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>13 — COMMUNITY & SOCIAL IMPACT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Community & Social Impact</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Investing in Local Communities</h2>
+                    <p>Nova Connect Egypt is committed to supporting social development. Our corporate social responsibility (CSR) strategy focuses on healthcare, quality education, youth entrepreneurship, and digital literacy. We design our social programs to deliver measurable outcomes aligned with local development priorities.</p>
+                    
+                    <p>Our community investment pillars include:
+                    <br>• <strong>Education:</strong> Modernizing local public schools and providing digital classrooms.
+                    <br>• <strong>Healthcare:</strong> Connecting rural clinics with high-speed internet for telemedicine.
+                    <br>• <strong>Youth & Startups:</strong> Providing business mentoring, tech tools, and seed funding for digital startups.
+                    <br>• <strong>Volunteerism:</strong> Encouraging employee participation in community development programs.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#1F1F1F; color:#FFFFFF;">
+                        <span style="font-size:28px; color:#FF7900; margin-bottom:2mm;">🎒</span>
+                        <span>Education Modernization Project</span>
+                        <span style="font-size:9px; color:#888888; font-weight:400; margin-top:1.5mm;">Giza governorate school network</span>
+                    </div>
+                    
+                    <h3>2026 Performance Highlights</h3>
+                    <p>In 2026, our community investments reached EGP 96 million, representing a 12% growth compared to 2025. Our programs served 412,000 community beneficiaries, supported 52 digital startups, and engaged employees in 31,400 volunteer hours.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 24</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>13 — COMMUNITY PORTFOLIO</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Community Investment & Volunteerism</h1>
+            <p class="lead-paragraph">The chart below details our EGP 96 million community investment portfolio for 2026, showing the allocation of capital across our five focus areas.</p>
+            
+            <div class="chart-container" style="height: 100mm; margin-top: 5mm;">
+                <img src="charts/community_investment.png" alt="Community Investment Breakdown">
+            </div>
+            
+            <div class="grid-3" style="margin-top: 6mm;">
+                <div style="background: #F6F6F6; padding: 4mm; border-top: 3.5px solid #FF7900;">
+                    <span style="font-size: 10px; font-weight: 700; color: #555555; text-transform: uppercase;">Total Investment</span>
+                    <h3 style="font-size: 18px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 0.5mm 0;">EGP 96M</h3>
+                    <span style="font-size: 9px; color: #2E7D32; font-weight: 700;">↑ 12% YoY</span>
+                </div>
+                <div style="background: #F6F6F6; padding: 4mm; border-top: 3.5px solid #1F1F1F;">
+                    <span style="font-size: 10px; font-weight: 700; color: #555555; text-transform: uppercase;">Volunteer Hours</span>
+                    <h3 style="font-size: 18px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 0.5mm 0;">31,400</h3>
+                    <span style="font-size: 9px; color: #2E7D32; font-weight: 700;">↑ 9.5% YoY</span>
+                </div>
+                <div style="background: #F6F6F6; padding: 4mm; border-top: 3.5px solid #FF7900;">
+                    <span style="font-size: 10px; font-weight: 700; color: #555555; text-transform: uppercase;">Beneficiaries</span>
+                    <h3 style="font-size: 18px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 0.5mm 0;">412,000</h3>
+                    <span style="font-size: 9px; color: #2E7D32; font-weight: 700;">↑ 14% YoY</span>
+                </div>
+            </div>
+            
+            <p style="font-size: 10.5px; color: #555555; line-height: 1.5; margin-top: 6mm; text-align: justify;">
+                <strong>Investment Strategy:</strong> Digital literacy and IT classroom support represent our largest spending area (35%), followed by investments in public education networks (25%) and youth startup incubators (20%).
+            </p>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 25</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>13 — COMMUNITY CASE STUDIES</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Community Case Studies</h1>
+            <p class="lead-paragraph">Brief summaries of our targeted community development programs implemented during 2026.</p>
+            
+            <!-- Case Study 1 -->
+            <div class="case-study-box" style="margin-top: 0; padding: 4.5mm;">
+                <div class="case-study-header">Youth Empowerment & Startups</div>
+                <div class="case-study-title" style="font-size:13.5px; margin-bottom:2mm;">Empowering Tech Entrepreneurs in Egypt</div>
+                <p style="font-size:10.5px; margin-bottom:2.5mm;">In 2026, we launched our <em>Nova Digital Accelerator</em> program, providing funding, cloud resources, and mentorship to tech startups. Through this initiative, we supported 52 early-stage startups in Cairo, Giza, and Alexandria, helping young entrepreneurs build digital business solutions.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; background:#F6F6F6; padding:2mm 3.5mm;">
+                    <span style="font-size:9px; font-weight:700; color:#555555; text-transform:uppercase;">Program Metrics</span>
+                    <span style="font-size:11px; font-weight:800; color:#FF7900;">52 Startups Funded • EGP 19.2M Invested</span>
+                </div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="case-study-box" style="margin-top: 6mm; padding: 4.5mm; border-top-color: #1F1F1F;">
+                <div class="case-study-header" style="color:#1F1F1F;">Rural Healthcare Connected</div>
+                <div class="case-study-title" style="font-size:13.5px; margin-bottom:2mm;">Telemedicine and Rural Health Initiatives</div>
+                <p style="font-size:10.5px; margin-bottom:2.5mm;">We partnered with the Ministry of Health to connect remote medical clinics in the Fayoum and Minya governorates with high-speed fiber internet. This connectivity allows local doctors to consult with specialists in Cairo, bringing quality medical advice to rural areas.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; background:#F6F6F6; padding:2mm 3.5mm;">
+                    <span style="font-size:9px; font-weight:700; color:#555555; text-transform:uppercase;">Program Metrics</span>
+                    <span style="font-size:11px; font-weight:800; color:#1F1F1F;">74,000 Patients Reached • 45 Clinics Connected</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 26</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>14 — OUR PEOPLE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Our People</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Building a High-Performance Culture</h2>
+                    <p>At Nova Connect Egypt, our people are the core driver of our success. We employ a workforce of 4,850 professionals across our retail centers, corporate headquarters, and field operations. We focus on providing a secure, inclusive work environment that supports talent development and engagement.</p>
+                    
+                    <p>Our workforce management strategy focuses on:
+                    <br>• <strong>Talent Development:</strong> Supporting employee career progression and technical training.
+                    <br>• <strong>Equal Opportunity:</strong> Enforcing fair labor standards and zero tolerance for discrimination.
+                    <br>• <strong>Employee Engagement:</strong> Conducting quarterly feedback surveys to monitor workplace satisfaction.
+                    <br>• <strong>Retention:</strong> Providing competitive compensation, health benefits, and flexible work plans.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#FF7900; color:#FFFFFF;">
+                        <span style="font-size:28px; color:#FFFFFF; margin-bottom:2mm;">👥</span>
+                        <span>Nova Connect Staff Meeting</span>
+                        <span style="font-size:9px; color:#FFFFFF; opacity:0.8; font-weight:400; margin-top:1.5mm;">Retail & Technical staff, Cairo HQ</span>
+                    </div>
+                    
+                    <h3>Workforce Key Metrics</h3>
+                    <p>In 2026, we achieved an employee engagement score of 87%. Our voluntary employee turnover rate was 8.2%, reflecting our positive workplace environment. Women represent 43% of our workforce, and 38% of our leadership positions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 27</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>14 — DIVERSITY & INCLUSION</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Diversity & Inclusion</h1>
+            <div class="grid-2-asym" style="gap:8mm;">
+                <div>
+                    <h2>Promoting Equal Opportunity</h2>
+                    <p>Nova Connect Egypt believes that a diverse workforce drives innovation. We support an inclusive environment where all employees are treated with respect, regardless of gender, physical ability, or background.</p>
+                    
+                    <p>Our diversity and inclusion priorities focus on:
+                    <br>• <strong>Gender Representation:</strong> Supporting female representation in STEM and tech-focused roles.
+                    <br>• <strong>Women in Leadership:</strong> Providing leadership programs and mentorship for women managers.
+                    <br>• <strong>Workplace Accessibility:</strong> Ensuring all retail stores and offices are accessible for people with disabilities.
+                    <br>• <strong>Inclusive Hiring:</strong> Partnering with local universities to recruit young professionals from diverse backgrounds.</p>
+                    
+                    <h3>Representation of People with Disabilities</h3>
+                    <p>In 2026, employees with disabilities represented 2.7% of our workforce, and we are working to increase this share to 4% by 2028 through accessible facility upgrades and targeted recruitment.</p>
+                </div>
+                <div>
+                    <div class="chart-container" style="height: 75mm; padding: 2mm;">
+                        <img src="charts/gender_donut.png" alt="Gender Split 2026">
+                    </div>
+                    <div style="background: #F6F6F6; padding: 4mm; border-left: 3px solid #FF7900; margin-top: 4mm;">
+                        <h4 style="margin-top:0; font-size:10px; text-transform:uppercase;">Women in Leadership Target</h4>
+                        <p style="font-size:10px; margin-bottom:0;">We target increasing women in leadership roles (manager level and above) to 45% by 2030, supported by our <em>Women in Tech</em> development program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 28</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>14 — LEARNING & DEVELOPMENT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Learning & Development</h1>
+            <div class="grid-2-asym" style="gap:8mm;">
+                <div>
+                    <h2>Investing in Professional Growth</h2>
+                    <p>As digital services evolve rapidly, we prioritize continuous learning for our employees. Nova Connect Egypt operates the <em>Nova Training Portal</em>, providing technical, leadership, and soft-skills modules.</p>
+                    
+                    <p>Our learning and development programs include:
+                    <br>• <strong>Technical Training:</strong> Cloud network certifications, cybersecurity, and data analysis.
+                    <br>• <strong>Leadership Programs:</strong> Executive mentoring and strategic planning courses.
+                    <br>• <strong>Compliance & Safety:</strong> Regular ethics and field safety programs.
+                    <br>• <strong>Tuition Assistance:</strong> Support for employees pursuing relevant degrees.</p>
+                    
+                    <h3>Training Hours Performance</h3>
+                    <p>In 2026, our employees completed a total of 72,500 training hours, representing an 18% increase compared to 2025. This equates to an average of 22.4 training hours per employee.</p>
+                </div>
+                <div>
+                    <div class="chart-container" style="height: 75mm; padding: 2mm;">
+                        <img src="charts/age_bar.png" alt="Age Distribution 2026">
+                    </div>
+                    <div style="background: #F6F6F6; padding: 4mm; border-left: 3px solid #1F1F1F; margin-top: 4mm;">
+                        <h4 style="margin-top:0; font-size:10px; text-transform:uppercase;">Talent Demographics</h4>
+                        <p style="font-size:10px; margin-bottom:0;">Our workforce age distribution shows a strong presence of mid-career professionals aged 30-50 (61%), balanced by entry-level talent under 30 (24%), supporting long-term continuity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 29</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>14 — HEALTH & SAFETY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Employee Wellbeing & Safety</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Prioritizing Workplace Safety</h2>
+                    <p>Nova Connect Egypt prioritizes a safe, healthy workplace for all employees and contractors. Our Occupational Health and Safety (OHS) management system aligns with international standard guidelines, with a strong focus on field technical operations and network installation teams.</p>
+                    
+                    <p>Our OHS program includes:
+                    <br>• <strong>Field Safety Audits:</strong> Regular risk assessments for base station climbers and fiber installation teams.
+                    <br>• <strong>Personal Protective Equipment (PPE):</strong> Enforcing strict equipment standards for technical personnel.
+                    <br>• <strong>Safety Training:</strong> Mandatory safety programs for all field contractors.
+                    <br>• <strong>Wellbeing Initiatives:</strong> Providing medical health insurance, counseling, and wellness resources.</p>
+                </div>
+                <div>
+                    <h3>Health & Safety Performance</h3>
+                    <p>In 2026, we achieved a safety training completion rate of 99% among field employees. We recorded 7 lost-time injury incidents and achieved zero fatalities, which remains our primary target.</p>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm; margin-top: 6mm;">
+                        <h4 style="margin-top:0; color:#FF7900;">2026 Health & Safety Data</h4>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;"><strong>Lost-Time Injuries:</strong> 7</p>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;"><strong>Fatalities:</strong> 0</p>
+                        <p style="font-size:10.5px; margin-bottom:0;"><strong>Safety Training Completion:</strong> 99%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 30</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>HUMAN RESOURCES DATA TABLES</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Human Resources Indicators</h1>
+            <p class="lead-paragraph">The table below details our human resources, diversity, learning, and safety indicators over the past three reporting years.</p>
+            
+            <div class="table-container" style="margin-top:8mm;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Human Resources Metric</th>
+                            <th>Unit</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>2026</th>
+                            <th>YoY Direction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Employees (FTE)</td>
+                            <td>Count</td>
+                            <td>4,520</td>
+                            <td>4,710</td>
+                            <td>4,850</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Women in Total Workforce</td>
+                            <td>%</td>
+                            <td>38%</td>
+                            <td>40%</td>
+                            <td>43%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Women in Management Roles</td>
+                            <td>%</td>
+                            <td>32%</td>
+                            <td>35%</td>
+                            <td>38%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Employees with Disabilities</td>
+                            <td>%</td>
+                            <td>2.2%</td>
+                            <td>2.5%</td>
+                            <td>2.7%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Average Training Hours per Employee</td>
+                            <td>Hours</td>
+                            <td>18.5</td>
+                            <td>20.2</td>
+                            <td>22.4</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Total Training Investment</td>
+                            <td>EGP M</td>
+                            <td>12.4</td>
+                            <td>14.8</td>
+                            <td>17.2</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Employee Engagement Score</td>
+                            <td>%</td>
+                            <td>83%</td>
+                            <td>85%</td>
+                            <td>87%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Voluntary Employee Turnover Rate</td>
+                            <td>%</td>
+                            <td>9.1%</td>
+                            <td>8.6%</td>
+                            <td>8.2%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Lost-Time Injuries (LTIs)</td>
+                            <td>Count</td>
+                            <td>9</td>
+                            <td>8</td>
+                            <td>7</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Work-Related Fatalities</td>
+                            <td>Count</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>→ Stable</td>
+                        </tr>
+                        <tr>
+                            <td>Safety Training Completion Rate</td>
+                            <td>%</td>
+                            <td>96%</td>
+                            <td>98%</td>
+                            <td>99%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 31</span>
+        </div>
+    </div>
+    \n
+    <div class="page divider-page">
+        <div class="divider-inner-gray">
+            <div class="div-num">03</div>
+            <div>
+                <div class="div-title" style="color:#1F1F1F;">
+                    Environmental<br>Performance
+                    <span>Reducing network carbon, conserving water, and e-waste circularity.</span>
+                </div>
+            </div>
+            <div class="div-quote">
+                "Circularity and carbon reduction are the pillars of our green telecommunications network."
+            </div>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>15 — ENVIRONMENTAL PERFORMANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Environmental Policy & Management</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Our Environmental Commitment</h2>
+                    <p>As a leading telecommunications company, Nova Connect Egypt recognizes that expanding digital networks can impact the environment. We are committed to minimizing our ecological footprint by managing our operations responsibly and adhering to strict environmental standards.</p>
+                    
+                    <p>Our environmental policy focuses on five main areas:
+                    <br>• <strong>Carbon Reductions:</strong> Actively transitioning our operations and supply chain to lower emissions.
+                    <br>• <strong>Energy Efficiency:</strong> Deploying high-efficiency cooling and smart network automation to limit energy use.
+                    <br>• <strong>Renewable Energy:</strong> Integrating solar-hybrid generators and local clean energy contracts.
+                    <br>• <strong>Water Stewardship:</strong> Restricting water consumption and reusing water in administrative buildings.
+                    <br>• <strong>Circular Economy:</strong> Recycling electronic waste and network devices.</p>
+                </div>
+                <div>
+                    <div class="image-placeholder" style="height: 60mm; margin-bottom: 5mm; background-color:#2E7D32; color:#FFFFFF;">
+                        <span style="font-size:28px; color:#FFFFFF; margin-bottom:2mm;">☀️</span>
+                        <span>Solar Tower Project</span>
+                        <span style="font-size:9px; color:#FFFFFF; opacity:0.8; font-weight:400; margin-top:1.5mm;">Hybrid Solar Base Station, Giza</span>
+                    </div>
+                    
+                    <h3>Environmental Management Systems</h3>
+                    <p>Our operations are managed under the <strong>ISO 14001</strong> environmental standard framework. We perform annual third-party audits to monitor compliance, track energy and resource usage, and verify our environmental indicators.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 33</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>15 — ENERGY & EFFICIENCY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Energy & Efficiency</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Managing Network Power</h2>
+                    <p>Energy consumption is our largest environmental footprint and operational cost area, driven by our switching centers and base towers. Nova Connect Egypt focuses on active energy management to improve network power efficiency.</p>
+                    
+                    <p>Key energy efficiency programs include:
+                    <br>• <strong>Network Modernization:</strong> Replacing legacy network transmitters with high-efficiency hardware.
+                    <br>• <strong>Smart Cooling Systems:</strong> Deploying heat-exchange cooling in switching hubs to limit air conditioning power.
+                    <br>• <strong>Power Sleep Modes:</strong> Activating automatic transmitter sleep cycles during low-traffic night hours.
+                    <br>• <strong>Peer Tower Sharing:</strong> Collaborating with other network operators to share base tower footprints.</p>
+                    
+                    <h3>Energy Intensity Performance</h3>
+                    <p>Our energy consumption in 2026 was 412,000 MWh—representing a 7% reduction compared to 2025. Our energy intensity decreased to 0.41 MWh per Terabyte (TB) of data traffic, demonstrating improved operational efficiency.</p>
+                </div>
+                <div>
+                    <div style="background: #F6F6F6; padding: 5mm; border-top: 4px solid #FF7900; margin-bottom: 5mm;">
+                        <h4 style="margin-top:0; color:#1F1F1F; font-size:11px; text-transform:uppercase;">Energy Key Metrics</h4>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Total Energy:</strong> 412,000 MWh</p>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Renewable Energy Share:</strong> 54%</p>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Energy Intensity:</strong> 0.41 MWh / TB</p>
+                        <p style="font-size:11px; margin-bottom:0;"><strong>Energy Reduction:</strong> 7% absolute decrease</p>
+                    </div>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm;">
+                        <h4 style="margin-top:0; color:#FF7900;">2030 Renewable Target</h4>
+                        <p style="font-size:10px; margin-bottom:0;">We target integrating 70% renewable energy across our entire network by 2030, supported by our ongoing transition to solar-hybrid towers in rural locations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 34</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>15 — ENERGY CONSUMPTION TRENDS</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Energy Consumption & Renewable Share</h1>
+            <p class="lead-paragraph">The chart below displays our 3-year energy consumption trend, illustrating a decreasing total power consumption alongside a growing share of renewable energy.</p>
+            
+            <div class="chart-container" style="height: 165mm;">
+                <img src="charts/energy_trend.png" alt="Energy Trends 2026">
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 35</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>16 — CLIMATE & CARBON</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Climate Change & Carbon Footprint</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Managing Carbon Emissions</h2>
+                    <p>Nova Connect Egypt supports global decarbonization targets and aligns its climate initiatives with the recommendations of the Task Force on Climate-related Financial Disclosures (TCFD).</p>
+                    
+                    <p>We monitor our carbon emissions across three scopes:
+                    <br>• <strong>Scope 1 (Direct Emissions):</strong> Driven by diesel fuel consumed in off-grid towers and our corporate vehicle fleet. In 2026, Scope 1 emissions were 42,000 tCO₂e.
+                    <br>• <strong>Scope 2 (Indirect Emissions):</strong> Generated from purchased electricity for our switching hubs and office buildings. In 2026, Scope 2 emissions were 98,000 tCO₂e.
+                    <br>• <strong>Scope 3 (Value Chain):</strong> Generated from supplier operations, transport, and waste. In 2026, Scope 3 emissions were 46,400 tCO₂e.</p>
+                    
+                    <h3>Carbon Emissions Performance</h3>
+                    <p>In 2026, our total carbon emissions were 186,400 tCO₂e, representing a 14% absolute reduction compared to 2025. This decrease was driven by our solar-hybrid tower program and carbon reduction contracts.</p>
+                </div>
+                <div>
+                    <div style="background: #F6F6F6; padding: 5.5mm; border-top: 4px solid #FF7900; margin-bottom: 5mm;">
+                        <h4 style="margin-top:0; color:#1F1F1F; font-size:11px; text-transform:uppercase;">Carbon Key Metrics</h4>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Scope 1:</strong> 42,000 tCO₂e</p>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Scope 2:</strong> 98,000 tCO₂e</p>
+                        <p style="font-size:11px; margin-bottom:2mm;"><strong>Scope 3:</strong> 46,400 tCO₂e</p>
+                        <p style="font-size:11px; margin-bottom:0;"><strong>Total GHG:</strong> 186,400 tCO₂e (↓ 14% YoY)</p>
+                    </div>
+                    
+                    <div style="border: 1px solid #E5E5E5; padding: 4.5mm;">
+                        <h4 style="margin-top:0; color:#FF7900;">2026 Emissions Reduction Drivers</h4>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;">• Replacing diesel with solar-hybrid systems in 115 towers.</p>
+                        <p style="font-size:10.5px; margin-bottom:1.5mm;">• Upgrading server cooling systems to reduce electricity usage.</p>
+                        <p style="font-size:10.5px; margin-bottom:0;">• Sourcing local procurement to limit transportation distances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 36</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>16 — EMISSIONS PERFORMANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Greenhouse Gas Emissions Trends</h1>
+            <p class="lead-paragraph">The charts below illustrate our greenhouse gas emissions performance: a 3-year stacked bar chart showing emissions reductions and a donut chart detailing our 2026 emissions breakdown.</p>
+            
+            <div class="grid-2" style="height: 160mm; gap: 6mm;">
+                <div class="chart-container" style="padding: 2mm;">
+                    <img src="charts/emissions_trend.png" alt="Emissions Trend">
+                </div>
+                <div class="chart-container" style="padding: 2mm;">
+                    <img src="charts/emissions_donut.png" alt="Emissions Donut 2026">
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 37</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>16 — DECARBONIZATION ROADMAP</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Decarbonization Roadmap</h1>
+            <p class="lead-paragraph">Our long-term targets on our path to achieving Net-Zero greenhouse gas emissions by 2050.</p>
+            
+            <div class="chart-container" style="height: 75mm; margin-top: 5mm;">
+                <img src="charts/decarbonization_roadmap.png" alt="Decarbonization Roadmap">
+            </div>
+            
+            <div class="grid-3" style="margin-top: 8mm;">
+                <div style="background: #F6F6F6; padding: 4.5mm; border-left: 3px solid #FF7900;">
+                    <span style="font-size: 11px; font-weight: 800; color: #FF7900; text-transform: uppercase;">2030 Target</span>
+                    <h3 style="font-size: 16px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 2mm 0;">50% Reduction</h3>
+                    <p style="font-size: 10px; margin-bottom: 0;">Scope 1 and 2 emissions reduction from our 2024 baseline, supported by 70% renewable energy integration.</p>
+                </div>
+                <div style="background: #F6F6F6; padding: 4.5mm; border-left: 3px solid #1F1F1F;">
+                    <span style="font-size: 11px; font-weight: 800; color: #1F1F1F; text-transform: uppercase;">2040 Target</span>
+                    <h3 style="font-size: 16px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 2mm 0;">80% Reduction</h3>
+                    <p style="font-size: 10px; margin-bottom: 0;">Decarbonization of our supply chain and requiring key supplier partners to adopt carbon targets.</p>
+                </div>
+                <div style="background: #F6F6F6; padding: 4.5mm; border-left: 3px solid #FF7900;">
+                    <span style="font-size: 11px; font-weight: 800; color: #FF7900; text-transform: uppercase;">2050 Goal</span>
+                    <h3 style="font-size: 16px; font-weight: 800; color: #1F1F1F; margin: 1.5mm 0 2mm 0;">Net-Zero</h3>
+                    <p style="font-size: 10px; margin-bottom: 0;">Achieving net-zero emissions across all scopes, utilizing approved carbon offsets for remaining emissions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 38</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>16 — WATER MANAGEMENT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Water Management</h1>
+            <div class="grid-2-asym" style="gap:8mm;">
+                <div>
+                    <h2>Conserving Water Resources</h2>
+                    <p>Water scarcity is a critical challenge in Egypt. Nova Connect Egypt works to minimize water consumption across our operations. While telecommunications is not a highly water-intensive sector, we manage water use in our corporate and retail offices.</p>
+                    
+                    <p>Our water conservation initiatives focus on:
+                    <br>• <strong>Low-Flow Plumbing:</strong> Installing efficient bathroom fixtures across our service centers.
+                    <br>• <strong>Rainwater Collection:</strong> Capturing rainwater for landscape irrigation at our Cairo headquarters.
+                    <br>• <strong>Graywater Recycling:</strong> Treatment systems to reuse sink and cooling water for landscaping.
+                    <br>• <strong>Employee Awareness:</strong> Promoting water conservation practices among our office staff.</p>
+                    
+                    <h3>Water Consumption Performance</h3>
+                    <p>In 2026, our total water consumption was 96,000 m³—representing a 5% reduction compared to 2025. We achieved a water recycling and reuse rate of 22% (21,500 m³), supporting conservation goals.</p>
+                </div>
+                <div>
+                    <div class="chart-container" style="height: 90mm; padding: 2mm;">
+                        <img src="charts/water_trend.png" alt="Water Trend">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 39</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>17 — WASTE & CIRCULAR ECONOMY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Waste & Circular Economy</h1>
+            <div class="grid-2-asym" style="gap:8mm;">
+                <div>
+                    <h2>Enabling Resource Circularity</h2>
+                    <p>Electronic waste (e-waste) is a growing environmental challenge for the telecommunications sector. Nova Connect Egypt is committed to circular economy practices, working to recycle materials, recover resources, and divert waste from landfills.</p>
+                    
+                    <p>Our waste management initiatives focus on:
+                    <br>• <strong>Network Equipment Recycling:</strong> Dismantling decommissioned copper cables and steel rack systems for industrial recycling.
+                    <br>• <strong>Consumer Device Recovery:</strong> Implementing trade-in options for old smartphones and accessories.
+                    <br>• <strong>Office & Retail Recycling:</strong> Standard recycling bins for paper, plastics, and metals.
+                    <br>• <strong>Hazardous Waste Management:</strong> Proper disposal of batteries and lead components from base stations.</p>
+                    
+                    <h3>Solid Waste Performance</h3>
+                    <p>In 2026, we generated 1,840 tonnes of solid waste, recycling 1,390 tonnes (75.5%). Our e-waste recovery programs collected and recycled 420 tonnes of technical equipment.</p>
+                </div>
+                <div>
+                    <div class="chart-container" style="height: 90mm; padding: 2mm;">
+                        <img src="charts/waste_recycling.png" alt="Waste Recycling 2026">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 40</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>17 — WASTE CASE STUDY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Case Study</h1>
+            
+            <div class="case-study-box">
+                <div class="case-study-header">Circular Economy Initiative</div>
+                <div class="case-study-title" style="font-size:15px; margin-bottom:2mm;">From Old Devices to New Value</div>
+                
+                <div class="case-study-grid">
+                    <div>
+                        <h3>The Challenge</h3>
+                        <p>Many consumers discard old mobile phones, chargers, and accessories, leading to electronic waste containing toxic substances like lead, mercury, and cadmium. These materials can contaminate local soils and groundwater if placed in standard landfills.</p>
+                        
+                        <h3>The Initiative</h3>
+                        <p>Nova Connect Egypt launched the <em>"From Old Devices to New Value"</em> campaign, offering retail trade-in discounts on new devices in exchange for recycling old hardware. We partnered with local certified e-waste processors to recover copper, gold, and plastics.</p>
+                        
+                        <h3>The Impact</h3>
+                        <p>In 2026, the program collected and recycled over 84,000 consumer devices and 420 tonnes of network e-waste, preventing material disposal in landfills and recovering valuable metals.</p>
+                    </div>
+                    <div>
+                        <div class="case-study-kpis">
+                            <div>
+                                <span class="case-kpi-val">84,000</span>
+                                <span class="case-kpi-lbl">Devices Recycled</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">420t</span>
+                                <span class="case-kpi-lbl">E-waste Diverted</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">75.5%</span>
+                                <span class="case-kpi-lbl">Recycling Rate Achieved</span>
+                            </div>
+                            <div>
+                                <span class="case-kpi-val">100%</span>
+                                <span class="case-kpi-lbl">Certified Processing Partners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 6mm; font-size:11px; line-height:1.5; color:#555555; text-align:justify;">
+                <strong>Sustainability Impact:</strong> Recovering gold, copper, and aluminum from recycled electronics consumes up to 90% less energy than mining raw materials, supporting national circular economy targets.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 41</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>ENVIRONMENTAL DATA TABLES</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Environmental Indicators</h1>
+            <p class="lead-paragraph">The table below details our environmental, energy, carbon, water, and waste indicators over the past three reporting years.</p>
+            
+            <div class="table-container" style="margin-top:10mm;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Environmental Metric</th>
+                            <th>Unit</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>2026</th>
+                            <th>YoY Direction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Energy Consumption</td>
+                            <td>MWh</td>
+                            <td>443,000</td>
+                            <td>428,000</td>
+                            <td>412,000</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Renewable Energy Share</td>
+                            <td>%</td>
+                            <td>43%</td>
+                            <td>48%</td>
+                            <td>54%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Energy Intensity per Data Traffic</td>
+                            <td>MWh / TB</td>
+                            <td>0.48</td>
+                            <td>0.44</td>
+                            <td>0.41</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Scope 1 (Direct GHG)</td>
+                            <td>tCO₂e</td>
+                            <td>48,000</td>
+                            <td>45,000</td>
+                            <td>42,000</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Scope 2 (Indirect GHG)</td>
+                            <td>tCO₂e</td>
+                            <td>115,000</td>
+                            <td>106,000</td>
+                            <td>98,000</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Scope 3 (Supply Chain GHG)</td>
+                            <td>tCO₂e</td>
+                            <td>53,700</td>
+                            <td>50,300</td>
+                            <td>46,400</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Total GHG Emissions</td>
+                            <td>tCO₂e</td>
+                            <td>216,700</td>
+                            <td>201,300</td>
+                            <td>186,400</td>
+                            <td>↓ 7.4% (YoY)</td>
+                        </tr>
+                        <tr>
+                            <td>Water Consumption</td>
+                            <td>m³</td>
+                            <td>101,000</td>
+                            <td>98,000</td>
+                            <td>96,000</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Water Reused and Recycled</td>
+                            <td>m³</td>
+                            <td>18,200</td>
+                            <td>19,600</td>
+                            <td>21,500</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Water Recycling Rate</td>
+                            <td>%</td>
+                            <td>18%</td>
+                            <td>20%</td>
+                            <td>22%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Total Solid Waste Generated</td>
+                            <td>Tonnes</td>
+                            <td>1,960</td>
+                            <td>1,910</td>
+                            <td>1,840</td>
+                            <td>↓ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Solid Waste Recycled/Diverted</td>
+                            <td>Tonnes</td>
+                            <td>1,254</td>
+                            <td>1,356</td>
+                            <td>1,390</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Solid Waste Recycling Rate</td>
+                            <td>%</td>
+                            <td>64%</td>
+                            <td>71%</td>
+                            <td>75.5%</td>
+                            <td>↑ Improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 42</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>18 — ESG TARGETS & PROGRESS</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>ESG Targets & Progress</h1>
+            <p class="lead-paragraph">The table below details our progress against our long-term targets. We track performance against our 2024 baselines to confirm target alignment.</p>
+            
+            <div class="table-container" style="margin-top:10mm;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Strategic Goal</th>
+                            <th>KPI Metric</th>
+                            <th>Baseline (2024)</th>
+                            <th>2026 Actual</th>
+                            <th>2030 Target</th>
+                            <th>Current Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Renewable Energy</strong></td>
+                            <td>Network grid integration share</td>
+                            <td>43%</td>
+                            <td>54%</td>
+                            <td>70%</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carbon Reductions</strong></td>
+                            <td>Scope 1 & 2 reduction from baseline</td>
+                            <td>0% (163k t)</td>
+                            <td>14% (140k t)</td>
+                            <td>50% (81.5k t)</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Women Leadership</strong></td>
+                            <td>Women in manager levels & above</td>
+                            <td>32%</td>
+                            <td>38%</td>
+                            <td>45%</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Solid Waste Recycling</strong></td>
+                            <td>Operations recycling rate</td>
+                            <td>64%</td>
+                            <td>75.5%</td>
+                            <td>90%</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Inclusion</strong></td>
+                            <td>Annual program beneficiaries</td>
+                            <td>120,000</td>
+                            <td>184,000</td>
+                            <td>300,000</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethics & Compliance</strong></td>
+                            <td>Employee Code training completion</td>
+                            <td>92%</td>
+                            <td>98%</td>
+                            <td>100%</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cybersecurity</strong></td>
+                            <td>Cyber staff training completion</td>
+                            <td>95%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td><span class="status-badge status-achieved">Achieved</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Supply Chain Screening</strong></td>
+                            <td>Active supplier ESG screenings</td>
+                            <td>68%</td>
+                            <td>87%</td>
+                            <td>95%</td>
+                            <td><span class="status-badge status-on-track">On Track</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 43</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>19 — DATA & METHODOLOGY</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Data & Methodology</h1>
+            <div class="grid-2">
+                <div>
+                    <h2>Technical Accounting Standard</h2>
+                    <p>To ensure consistency and comparability, Nova Connect Egypt compiles its ESG data in accordance with international frameworks and industry guidelines.</p>
+                    
+                    <p>Our calculation methodologies include:
+                    <br>• <strong>Carbon Accounting:</strong> Scope 1 and Scope 2 greenhouse gas emissions are calculated using the <em>GHG Protocol Corporate Standard</em>. Emission factors for electricity are sourced from the Egyptian National Grid average emission factors.
+                    <br>• <strong>Scope 3 Emissions:</strong> Scope 3 calculations are based on the <em>GHG Protocol Corporate Value Chain Standard</em>, applying screening and supplier spend-based emission factors where actual vendor data is unavailable.
+                    <br>• <strong>Energy Consumption:</strong> Energy figures are aggregated from utility billing records and fuel purchase logs for generators.</p>
+                </div>
+                <div>
+                    <h3>Data Quality Controls</h3>
+                    <p>Our ESG data is monitored by our Internal Audit team and recorded in our centralized carbon tracking system. No restatements of historical 2024 or 2025 figures were required during this reporting cycle.</p>
+                    
+                    <div style="background: #F6F6F6; padding: 5mm; border-left: 4px solid #1F1F1F; margin-top: 6mm;">
+                        <h4 style="margin-top:0; font-size:11px; text-transform:uppercase;">Reporting Boundaries</h4>
+                        <p style="font-size:11px; margin-bottom:0; text-align:justify;">We apply the operational control boundary approach, covering all offices, retail service centers, technical switching facilities, and cellular base towers owned or operated by Nova Connect Egypt S.A.E.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 44</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>ESG DATA TABLES — ENVIRONMENTAL</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Detailed Environmental Disclosures</h1>
+            <p class="lead-paragraph">The table below details all primary environmental, climate, water, and waste parameters recorded by Nova Connect Egypt over the 2024-2026 timeframe.</p>
+            
+            <table class="data-table" style="font-size:9.5px;">
+                <thead>
+                    <tr>
+                        <th>Disclosure Parameter</th>
+                        <th>GRI Ref</th>
+                        <th>Unit</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Direct Energy (Diesel fuel)</td>
+                        <td>GRI 302-1</td>
+                        <td>MWh equivalent</td>
+                        <td>162,000</td>
+                        <td>152,000</td>
+                        <td>141,000</td>
+                    </tr>
+                    <tr>
+                        <td>Indirect Energy (Grid electricity)</td>
+                        <td>GRI 302-1</td>
+                        <td>MWh</td>
+                        <td>281,000</td>
+                        <td>276,000</td>
+                        <td>271,000</td>
+                    </tr>
+                    <tr>
+                        <td>Total Energy Consumption</td>
+                        <td>GRI 302-1</td>
+                        <td>MWh</td>
+                        <td>443,000</td>
+                        <td>428,000</td>
+                        <td>412,000</td>
+                    </tr>
+                    <tr>
+                        <td>Renewable Grid Share</td>
+                        <td>GRI 302-1</td>
+                        <td>%</td>
+                        <td>43.0%</td>
+                        <td>48.0%</td>
+                        <td>54.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Direct Carbon (Scope 1)</td>
+                        <td>GRI 305-1</td>
+                        <td>tCO₂e</td>
+                        <td>48,000</td>
+                        <td>45,000</td>
+                        <td>42,000</td>
+                    </tr>
+                    <tr>
+                        <td>Indirect Carbon (Scope 2)</td>
+                        <td>GRI 305-2</td>
+                        <td>tCO₂e</td>
+                        <td>115,000</td>
+                        <td>106,000</td>
+                        <td>98,000</td>
+                    </tr>
+                    <tr>
+                        <td>Value Chain Carbon (Scope 3)</td>
+                        <td>GRI 305-3</td>
+                        <td>tCO₂e</td>
+                        <td>53,700</td>
+                        <td>50,300</td>
+                        <td>46,400</td>
+                    </tr>
+                    <tr>
+                        <td>Total Carbon Emissions</td>
+                        <td>GRI 305-1,2,3</td>
+                        <td>tCO₂e</td>
+                        <td>216,700</td>
+                        <td>201,300</td>
+                        <td>186,400</td>
+                    </tr>
+                    <tr>
+                        <td>Emissions Intensity</td>
+                        <td>GRI 305-4</td>
+                        <td>tCO₂e / FTE</td>
+                        <td>47.9</td>
+                        <td>42.7</td>
+                        <td>38.4</td>
+                    </tr>
+                    <tr>
+                        <td>Water Consumption</td>
+                        <td>GRI 303-3</td>
+                        <td>m³</td>
+                        <td>101,000</td>
+                        <td>98,000</td>
+                        <td>96,000</td>
+                    </tr>
+                    <tr>
+                        <td>Water Reused</td>
+                        <td>GRI 303-3</td>
+                        <td>m³</td>
+                        <td>18,200</td>
+                        <td>19,600</td>
+                        <td>21,500</td>
+                    </tr>
+                    <tr>
+                        <td>Solid Waste Generated</td>
+                        <td>GRI 306-3</td>
+                        <td>Tonnes</td>
+                        <td>1,960</td>
+                        <td>1,910</td>
+                        <td>1,840</td>
+                    </tr>
+                    <tr>
+                        <td>Solid Waste Recycled</td>
+                        <td>GRI 306-4</td>
+                        <td>Tonnes</td>
+                        <td>1,254</td>
+                        <td>1,356</td>
+                        <td>1,390</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 45</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>ESG DATA TABLES — SOCIAL</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Detailed Social Disclosures</h1>
+            <p class="lead-paragraph">The table below details all primary labor, employment, safety, diversity, and community investment parameters recorded by Nova Connect Egypt over the 2024-2026 timeframe.</p>
+            
+            <table class="data-table" style="font-size:9.5px;">
+                <thead>
+                    <tr>
+                        <th>Disclosure Parameter</th>
+                        <th>GRI Ref</th>
+                        <th>Unit</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Workforce (FTE)</td>
+                        <td>GRI 2-7</td>
+                        <td>Count</td>
+                        <td>4,520</td>
+                        <td>4,710</td>
+                        <td>4,850</td>
+                    </tr>
+                    <tr>
+                        <td>Gender Mix (Women)</td>
+                        <td>GRI 405-1</td>
+                        <td>%</td>
+                        <td>38%</td>
+                        <td>40%</td>
+                        <td>43%</td>
+                    </tr>
+                    <tr>
+                        <td>Women in Management</td>
+                        <td>GRI 405-1</td>
+                        <td>%</td>
+                        <td>32%</td>
+                        <td>35%</td>
+                        <td>38%</td>
+                    </tr>
+                    <tr>
+                        <td>Employees with Disabilities</td>
+                        <td>GRI 405-1</td>
+                        <td>%</td>
+                        <td>2.2%</td>
+                        <td>2.5%</td>
+                        <td>2.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Average Training per Employee</td>
+                        <td>GRI 404-1</td>
+                        <td>Hours</td>
+                        <td>18.5</td>
+                        <td>20.2</td>
+                        <td>22.4</td>
+                    </tr>
+                    <tr>
+                        <td>Total Training Investment</td>
+                        <td>GRI 404-2</td>
+                        <td>EGP M</td>
+                        <td>12.4</td>
+                        <td>14.8</td>
+                        <td>17.2</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Engagement Score</td>
+                        <td>Internal</td>
+                        <td>%</td>
+                        <td>83%</td>
+                        <td>85%</td>
+                        <td>87%</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Turnover Rate</td>
+                        <td>GRI 401-1</td>
+                        <td>%</td>
+                        <td>9.1%</td>
+                        <td>8.6%</td>
+                        <td>8.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Lost-Time Injuries (LTIs)</td>
+                        <td>GRI 403-9</td>
+                        <td>Count</td>
+                        <td>9</td>
+                        <td>8</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Work-Related Fatalities</td>
+                        <td>GRI 403-9</td>
+                        <td>Count</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Community Investments</td>
+                        <td>GRI 201-1</td>
+                        <td>EGP M</td>
+                        <td>78.0</td>
+                        <td>85.5</td>
+                        <td>96.0</td>
+                    </tr>
+                    <tr>
+                        <td>Community Beneficiaries</td>
+                        <td>GRI 413-1</td>
+                        <td>Count</td>
+                        <td>324k</td>
+                        <td>361k</td>
+                        <td>412k</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 46</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>ESG DATA TABLES — GOVERNANCE</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Detailed Governance Disclosures</h1>
+            <p class="lead-paragraph">The table below details our primary board composition, anti-corruption, cybersecurity, and supplier screening parameters recorded by Nova Connect Egypt over the 2024-2026 timeframe.</p>
+            
+            <table class="data-table" style="font-size:9.5px;">
+                <thead>
+                    <tr>
+                        <th>Disclosure Parameter</th>
+                        <th>GRI Ref</th>
+                        <th>Unit</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Board Members Count</td>
+                        <td>GRI 2-9</td>
+                        <td>Count</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Independent Directors</td>
+                        <td>GRI 2-9</td>
+                        <td>Count</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Board Women Representation</td>
+                        <td>GRI 2-9</td>
+                        <td>%</td>
+                        <td>18%</td>
+                        <td>27%</td>
+                        <td>27%</td>
+                    </tr>
+                    <tr>
+                        <td>Board Meetings Held</td>
+                        <td>GRI 2-12</td>
+                        <td>Count</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Ethics Training Completion</td>
+                        <td>GRI 205-2</td>
+                        <td>%</td>
+                        <td>92%</td>
+                        <td>95%</td>
+                        <td>98%</td>
+                    </tr>
+                    <tr>
+                        <td>Compliance Audit Coverage</td>
+                        <td>GRI 205-1</td>
+                        <td>%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Whistleblowing Cases Logged</td>
+                        <td>GRI 2-26</td>
+                        <td>Count</td>
+                        <td>28</td>
+                        <td>31</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>Whistleblowing Cases Resolved</td>
+                        <td>GRI 2-26</td>
+                        <td>Count</td>
+                        <td>27</td>
+                        <td>29</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>Security Incidents Recorded</td>
+                        <td>GRI 418-1</td>
+                        <td>Count</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Cybersecurity Staff Training</td>
+                        <td>Internal</td>
+                        <td>%</td>
+                        <td>95%</td>
+                        <td>98%</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Suppliers Screened for ESG</td>
+                        <td>GRI 308/414</td>
+                        <td>%</td>
+                        <td>68%</td>
+                        <td>78%</td>
+                        <td>87%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 47</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>20 — GRI INDEX (PART 1)</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>GRI Standards Index</h1>
+            <p class="lead-paragraph">Nova Connect Egypt reports in accordance with the GRI Standards for the period 1 January 2026 to 31 December 2026. This index serves as a reference guide to locate specific GRI disclosures.</p>
+            
+            <table class="data-table" style="font-size:9px;">
+                <thead>
+                    <tr>
+                        <th>GRI Standard</th>
+                        <th>Disclosure Description</th>
+                        <th>Location / Disclosure Response</th>
+                        <th>Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GRI 2: General Disclosures (2021)</strong></td>
+                        <td>2-1 Organizational details</td>
+                        <td>Nova Connect Egypt S.A.E., Cairo, Egypt.</td>
+                        <td>06</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-2 Entities included in reporting</td>
+                        <td>Nova Connect Egypt and operational subsidiaries.</td>
+                        <td>03</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-3 Reporting period and contact</td>
+                        <td>1 Jan - 31 Dec 2026. esg@novaconnect.com.eg</td>
+                        <td>03</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-4 Restatements of information</td>
+                        <td>No historical data restatements.</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-5 External assurance</td>
+                        <td>Independent limited assurance statement.</td>
+                        <td>51</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-6 Activities, value chain, partners</td>
+                        <td>Mobile data, voice, and financial services in Egypt.</td>
+                        <td>06</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-7 Employees</td>
+                        <td>4,850 total full-time equivalent employees.</td>
+                        <td>27, 46</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-9 Governance structure & composition</td>
+                        <td>11 Board members, 5 independent, 3 female.</td>
+                        <td>16, 47</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-11 Chair of Board of Directors</td>
+                        <td>Non-executive Board Chair.</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2-12 Role in managing impacts</td>
+                        <td>Board Sustainability & Risk Committee oversight.</td>
+                        <td>09, 16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 48</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>20 — GRI INDEX (PART 2)</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>GRI Standards Index</h1>
+            <p class="lead-paragraph">Nova Connect Egypt reports in accordance with the GRI Standards for the period 1 January 2026 to 31 December 2026. This section details environmental disclosures.</p>
+            
+            <table class="data-table" style="font-size:9px;">
+                <thead>
+                    <tr>
+                        <th>GRI Standard</th>
+                        <th>Disclosure Description</th>
+                        <th>Location / Disclosure Response</th>
+                        <th>Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GRI 3: Material Topics (2021)</strong></td>
+                        <td>3-1 Process to determine topics</td>
+                        <td>Materiality assessment, stakeholder surveys.</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>3-2 List of material topics</td>
+                        <td>12 prioritized topics.</td>
+                        <td>11, 12</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 302: Energy (2016)</strong></td>
+                        <td>302-1 Energy consumption within</td>
+                        <td>Total energy: 412,000 MWh. Grid: 271,000 MWh.</td>
+                        <td>34, 45</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>302-3 Energy intensity</td>
+                        <td>0.41 MWh / Terabyte (TB) of data traffic.</td>
+                        <td>34, 42</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>302-4 Reduction of energy use</td>
+                        <td>7% absolute reduction compared to 2025.</td>
+                        <td>34, 45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 303: Water (2018)</strong></td>
+                        <td>303-3 Water withdrawal</td>
+                        <td>96,000 m³ water consumption.</td>
+                        <td>39, 45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 305: Emissions (2016)</strong></td>
+                        <td>305-1 Direct (Scope 1) emissions</td>
+                        <td>42,000 tCO₂e.</td>
+                        <td>36, 45</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>305-2 Indirect (Scope 2) emissions</td>
+                        <td>98,000 tCO₂e.</td>
+                        <td>36, 45</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>305-3 Other indirect (Scope 3)</td>
+                        <td>46,400 tCO₂e.</td>
+                        <td>36, 45</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>305-4 GHG emissions intensity</td>
+                        <td>38.4 tCO₂e per full-time employee.</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 306: Waste (2020)</strong></td>
+                        <td>306-3 Waste generated</td>
+                        <td>Total waste: 1,840 tonnes. E-waste: 420 tonnes.</td>
+                        <td>40, 45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 49</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>20 — GRI INDEX (PART 3)</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>GRI Standards Index</h1>
+            <p class="lead-paragraph">Nova Connect Egypt reports in accordance with the GRI Standards for the period 1 January 2026 to 31 December 2026. This section details social and governance disclosures.</p>
+            
+            <table class="data-table" style="font-size:9px;">
+                <thead>
+                    <tr>
+                        <th>GRI Standard</th>
+                        <th>Disclosure Description</th>
+                        <th>Location / Disclosure Response</th>
+                        <th>Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GRI 308: Supplier Env (2016)</strong></td>
+                        <td>308-1 New suppliers screened</td>
+                        <td>87% of suppliers screened for environmental criteria.</td>
+                        <td>19, 47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 401: Employment (2016)</strong></td>
+                        <td>401-1 Employee hires and turnover</td>
+                        <td>Turnover rate: 8.2% voluntary.</td>
+                        <td>27, 46</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 403: OHS (2018)</strong></td>
+                        <td>403-9 Work-related injuries</td>
+                        <td>7 LTIs recorded. Zero fatalities.</td>
+                        <td>30, 46</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 404: Training (2016)</strong></td>
+                        <td>404-1 Average training hours per staff</td>
+                        <td>22.4 average training hours per employee.</td>
+                        <td>29, 46</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>404-2 Programs for upgrading skills</td>
+                        <td>Nova Training Portal and cloud network programs.</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 405: Diversity (2016)</strong></td>
+                        <td>405-1 Diversity of governance & staff</td>
+                        <td>Workforce: 43% female. Board: 27% female.</td>
+                        <td>16, 28</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 413: Communities (2016)</strong></td>
+                        <td>413-1 Local community programs</td>
+                        <td>Rural connectivity, digital centers, healthcare.</td>
+                        <td>22, 24</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 414: Supplier Social (2016)</strong></td>
+                        <td>414-1 New suppliers screened</td>
+                        <td>87% of suppliers screened for social criteria.</td>
+                        <td>19, 47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GRI 418: Customer Privacy (2016)</strong></td>
+                        <td>418-1 Substantiated complaints privacy</td>
+                        <td>Zero data privacy incidents recorded in 2026.</td>
+                        <td>18, 47</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 50</span>
+        </div>
+    </div>
+    \n
+    <div class="page normal-page">
+        <div class="page-header">
+            <span>NOVA CONNECT EGYPT</span>
+            <span>21 — INDEPENDENT ASSURANCE STATEMENT</span>
+        </div>
+        <div style="margin-top: 8mm;">
+            <h1>Independent Assurance Statement</h1>
+            <p class="lead-paragraph" style="color: #D32F2F; border-left-color: #D32F2F;">
+                <strong>IMPORTANT NOTICE:</strong> This is a fictional limited assurance statement prepared solely for illustrative purposes in this report. No actual external audit has been conducted by Sustainability Assurance Partners.
+            </p>
+            
+            <div style="font-size: 10.5px; line-height: 1.5; text-align: justify;">
+                <p><strong>To the Board of Directors of Nova Connect Egypt:</strong></p>
+                <p>We have been engaged by Nova Connect Egypt S.A.E. to perform an independent, limited assurance engagement on selected Environmental, Social, and Governance (ESG) performance indicators disclosed in the <em>Nova Connect Egypt Annual ESG & Sustainability Report 2026</em> for the year ended 31 December 2026.</p>
+                
+                <p><strong>Assurance Scope and Indicators:</strong>
+                <br>Our assurance scope was limited to the following key performance indicators for 2026:
+                <br>• Total Energy Consumption (412,000 MWh) and Renewable Energy Share (54%)
+                <br>• Scope 1 and Scope 2 Greenhouse Gas Emissions (140,000 tCO₂e combined)
+                <br>• Total Solid Waste Generated (1,840 tonnes) and recycling rate (75.5%)
+                <br>• Workforce Gender Representation (43% female) and average training hours (22.4 hours)</p>
+                
+                <p><strong>Assurance Standard Applied:</strong>
+                <br>We conducted our engagement in accordance with the International Standard on Assurance Engagements (ISAE) 3000 (Revised), <em>Assurance Engagements Other than Audits or Reviews of Historical Financial Information</em>, issued by the International Auditing and Assurance Standards Board.</p>
+                
+                <p><strong>Conclusion:</strong>
+                <br>Based on our procedures and the evidence obtained, nothing has come to our attention that causes us to believe that the selected ESG performance indicators for 2026 are not prepared, in all material respects, in accordance with the GRI Standards criteria.</p>
+            </div>
+            
+            <div class="ceo-signature-area" style="margin-top: 5mm;">
+                <div>
+                    <p style="margin-bottom:1mm; font-weight:700; color:#1F1F1F;">Sustainability Assurance Partners S.A.</p>
+                    <p style="margin-bottom:0; font-size:10px; color:#555555; text-transform:uppercase;">Cairo, Egypt Office</p>
+                </div>
+                <div style="font-family:'Courier New', monospace; font-size:11px; font-weight:bold; border: 1.5px solid #FF7900; padding: 2.5mm; color:#FF7900;">
+                    AUDITED
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>ESG & Sustainability Report 2026</span>
+            <span>Page 51</span>
+        </div>
+    </div>
+    \n
+    <div class="page back-cover-page">
+        <div class="back-cover-inner">
+            <div class="back-cover-logo">NOVA CONNECT<span>EGYPT</span></div>
+            <div>
+                <div class="cover-tagline" style="border-left-color:#FF7900; color:#FFFFFF; margin-bottom:10mm; font-size:14px; max-width:140mm;">
+                    Connecting People.<br>Empowering Communities.<br>Building a Sustainable Future.
+                </div>
+            </div>
+            
+            <div class="back-cover-contact">
+                <p style="color:#FFFFFF; font-size:11px; margin-bottom:2mm;"><strong>NOVA CONNECT EGYPT S.A.E.</strong></p>
+                <p style="color:#CCCCCC; font-size:10.5px; margin-bottom:1mm;">Headquarters: Nile Towers, Corniche El Nil, Cairo, Egypt</p>
+                <p style="color:#CCCCCC; font-size:10.5px; margin-bottom:1mm;">Email: sustainability@novaconnect.com.eg</p>
+                <p style="color:#CCCCCC; font-size:10.5px; margin-bottom:0;">Website: www.novaconnect.com.eg/sustainability</p>
+            </div>
+            
+            <div class="back-cover-legal">
+                <strong>Legal Disclaimer:</strong> Nova Connect Egypt is a fictional telecommunications company created solely for the purposes of this ESG and Sustainability Report template. All corporate performance figures, carbon accounting metrics, digital inclusion beneficiaries, and social impact indicators represent mock data designed for demonstration. Any resemblance to real companies, organizations, or operational events is purely coincidental.
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
